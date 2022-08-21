@@ -1,0 +1,92 @@
+#img-head{
+    background-image: url('WhatsApp Image 2022-08-21 at 9.31.21 PM.jpeg');
+    /* width: 1513px; */
+    height: 283px;
+    left: -1px;
+    top: 98px;
+}
+img{
+    left: 28.77%;
+    right: 27.98%;
+    top: 15.48%;
+    bottom: 57.84%;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 52px;
+    margin-top: 30px;
+}
+#title{
+    left: 2.77%;
+    right: -2.77%;
+    top: 0%;
+    bottom: 58.7%;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 120px;
+    /* or 267% */
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+}
+#content-1{
+    width: 700px;
+    font-size: 20px;
+    line-height: 27px;
+    left: 21.18%;
+    right: 18.41%;
+    top: 38.57%;
+    bottom: 7.17%;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #47515E;
+    font-family: Plus Jakarta Sans;
+}
+#content-2{
+    display: grid;
+    width: 700px;
+    margin-top: 20px;
+    grid-template-columns: auto auto;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+}
+#content-3{
+    width: 1086px;
+    height: 54px;
+    left: 150px;
+    top: 155px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 45px;
+    text-transform: capitalize;
+    color: #000000;
+    text-align: left;
+}
+#content-4{
+    width: 1029px;
+    /* height: 213px; */
+    left: 189px;
+    top: 230px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 45px;
+    text-transform: capitalize;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 50px;
+}
