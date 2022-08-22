@@ -6,6 +6,7 @@ function Blog() {
   return (
     <div id="Blog">
         <center>
+            <div id="latest-blog-img">
             <div>
                 <label style={{visibility:"hidden"}}>BLOGS</label>
             </div>
@@ -13,7 +14,7 @@ function Blog() {
                 <label id="title" style={{color:"#F0F8FF"}}>Latest Blog</label> 
             </div>
             <div id="blog-latest">
-                <div id="about-blog">
+                <div id="about-blog-latest">
                     <img alt="logo" src="https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png"></img>
                     <div id="details">
                         <div id="date">
@@ -75,6 +76,8 @@ function Blog() {
                     </div>
                 </div>
             </div>
+            </div>
+            <div id="our-blog-img">
             <div>
                 <label style={{visibility:"hidden"}}>BLOGS</label>
             </div>
@@ -136,6 +139,7 @@ function Blog() {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </center>
     </div>

@@ -20,9 +20,18 @@
     left: 51px;
     top: 329px;
     border-radius: 46px;
-    background: #373B44; 
+    background: #41E6A61A;
+    /* background: #373B44; 
     background: -webkit-linear-gradient(to right, #4286f4, #373B44);  
-    background: linear-gradient(to right, #4286f4, #373B44); 
+    background: linear-gradient(to right, #4286f4, #373B44);  */
+}
+#about-blog-latest{
+    height: 470px;
+    width: 370px;
+    left: 51px;
+    top: 329px;
+    border-radius: 46px;
+    background: #11203899;
 }
 img{
     /* height: 224.91453552246094px; */
@@ -105,6 +114,7 @@ img{
     grid-template-columns: auto auto;
     margin-left: 10px;
     justify-content: space-between;
+    padding-bottom: 40px;
 }
 #latest-img{
     height: 169px;
@@ -190,4 +200,12 @@ img{
     left: 624px;
     top: 430px;
     border: 1px solid #FFFFFF;
+}
+#latest-blog-img{
+    /* background-image: url('WhatsApp Image 2022-08-22 at 6.31.36 PM (1).jpeg'); */
+    background-color: #41e6a7;
+}
+#our-blog-img{
+    background-image: url('WhatsApp Image 2022-08-22 at 6.34.14 PM.jpeg');
+    padding-bottom: 50px;
 }
