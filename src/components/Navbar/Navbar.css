@@ -14,6 +14,7 @@
     background: var(--navbar-bg);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     letter-spacing: 1.5px;
+    position: fixed;
 }
 
 #nav-container .desktop-nav {
@@ -122,7 +123,7 @@
         flex: 1;
     }
     #nav-container .desktop-nav {
-        height: 9vh;
+        height: 11vh;
     }
     .desktop-nav ul {
         display: none;

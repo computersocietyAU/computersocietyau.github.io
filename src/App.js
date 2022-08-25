@@ -3,9 +3,12 @@ import { Home, Navbar } from './components';
 
 const App = () => {
   return (
-    <div>
+    <div className='app'>
       <Navbar />
       <Home />
+      <div className="wave"></div>
+      <div className="wave"></div>
+      <div className='background'></div>
     </div>
   )
 };

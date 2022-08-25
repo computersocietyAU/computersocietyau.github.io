@@ -1,0 +1,53 @@
+#home section {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+figure {
+    font-family: 'Poor Story', cursive;
+    display: block;
+    position: relative;
+}
+
+figcaption {
+    position: absolute;
+    top: 58%;
+    left: 42%;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #41E6A6;
+}
+
+#landing img {
+    width: 650px;
+    height: 320px;
+}
+
+@media screen and (max-width: 950px) {
+    #landing img {
+        width: 500px;
+        height: 230px;
+    }
+    figcaption {
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #landing img {
+        width: 400px;
+        height: 200px;
+    }
+    figcaption {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}

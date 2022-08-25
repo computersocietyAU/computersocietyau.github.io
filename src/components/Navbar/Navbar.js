@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav id='nav-container'>
-      <div className='desktop-nav'>
+      <div className='desktop-nav' style={{maxWidth: '1600px', margin: '0 auto'}}>
         <div id='nav-logo'>
           <a href='/'>💻 CSAU</a>
         </div>
