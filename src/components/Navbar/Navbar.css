@@ -1,0 +1,136 @@
+:root {
+    --navbar-bg: rgba(57, 55, 124, 0.8);
+    --nav-special: #41E6A6;
+}
+
+#nav-container a {
+    text-decoration: none;
+}
+
+#nav-container {
+    width: 100%;
+    min-height: 12vh;
+    padding: 0px 30px 0px 20px;
+    background: var(--navbar-bg);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    letter-spacing: 1.5px;
+    position: fixed;
+    z-index: 10;
+}
+
+#nav-container .desktop-nav {
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-logo, #nav-icon-wrapper {
+    flex: 0.25;
+}
+
+#nav-logo a {
+    font-family: 'Goldman', cursive;
+    color: var(--nav-special);
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+
+.desktop-nav ul {
+    transform: translateY(0%);
+    flex: 0.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    transition: 0.5s ease-in-out;
+}
+
+.desktop-nav ul.hide {
+    transform: translateY(-200%);
+}
+
+#nav-container ul a {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    line-height: 1.75em;
+}
+
+#nav-container ul a:hover {
+    cursor: pointer;
+    border-bottom: 3.5px solid var(--nav-special);
+}
+
+#nav-container li.active a {
+    color: var(--nav-special);
+}
+
+#nav-icon-wrapper {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#nav-icon {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.45;
+}
+
+#nav-icon.active {
+    opacity: 1;
+}
+
+#nav-icon img { 
+    display: block;
+    margin: 2.5px 0px;
+    height: 3px;
+}
+
+.mobile-nav {
+    display: none;
+    padding-bottom: 15px;
+}
+
+.mobile-nav.hide {
+    display: none;
+}
+
+.mobile-nav ul {
+    text-align: center;
+    list-style-type: none;
+    transition: 0.5s ease-in-out;
+}
+
+.mobile-nav ul li {
+    margin: 5px 0px;
+}
+
+
+@media screen and (max-width: 1100px) {
+    #nav-logo, #nav-icon-wrapper {
+        flex: 0.15;
+    }
+    .desktop-nav ul {
+        flex: 0.65;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #nav-logo, #nav-icon-wrapper {
+        flex: 1;
+    }
+    #nav-container .desktop-nav {
+        height: 11vh;
+    }
+    .desktop-nav ul {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+}

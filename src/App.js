@@ -1,10 +1,11 @@
-import React from 'react'
-import {Router,Outlet,ReactLocation} from '@tanstack/react-location'
+import React from 'react';
+import { Home, Navbar } from './components';
+import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
 
 const routes = [
   {
     path: '/',
-    element: <div>Home Page</div>
+    element: <Home />
   },
   {
     path:'/events',
@@ -26,11 +27,15 @@ const routes = [
 
 const location = new ReactLocation();
 
-function App() {
+const App = () => {
   return (
     <Router location={location} routes={routes}>
       <div className="App">
-        <Outlet/>
+        <Navbar />
+        <Outlet />
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className='background'></div>
       </div>
     </Router>
   );
