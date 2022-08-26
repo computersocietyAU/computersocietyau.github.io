@@ -7,7 +7,7 @@ const Navbar = () => {
   const navElem = useRef(); 
 
   const navItems = ['Home', 'Events', 'Workshops', 'Blog', 'Our Team'];
-  const navLinks = ['/', '/events', '/workshops', '/blog', '/team'];
+  const navLinks = ['/', '/events', '/workshops', '/blogs', '/team'];
 
   return (
     <nav id='nav-container'>
