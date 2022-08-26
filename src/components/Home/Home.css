@@ -30,6 +30,194 @@ figcaption {
     height: 320px;
 }
 
+#about1, #about2 {
+    padding: 7rem 0px;
+}
+
+.content {
+    width: min(90%, 1250px);
+    margin: 0 auto;
+}
+
+.content h1 {
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 50px;
+    color: #41E6A6;
+}
+
+.about-container-one, .about-container-two {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-container-two {
+    flex-direction: row-reverse;
+}
+
+.content img {
+    display: block;
+    object-fit: cover;
+    width: min(90%, 550px);
+    height: 350px;
+}
+
+.content p {
+    max-width: 600px;
+    font-weight: 300;
+    font-size: 20px;
+    opacity: 0.75;
+    letter-spacing: 1px;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+#contact {
+    padding: 7rem 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contact ul {
+    list-style-type: none;
+}
+
+#contact a {
+    display: block;
+    margin: 15px 0px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    opacity: 0.85;
+    letter-spacing: 1px;
+}
+
+.contact-container {
+    width: min(90%, 1100px);
+    padding: 0px 10px 0px 7px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-container > img {
+    display: block;
+    object-fit: contain;
+    width: 250px;
+    height: 250px;
+    margin-right: 50px;
+}
+
+.contact-container > div {
+    flex: 0.8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#contact-form input {
+    height: 2.3rem;
+    padding: 15px 10px;
+    background: rgba(40, 133, 122, 0.8);
+}
+
+#contact-form textarea {
+    margin: 10px 0px;
+    padding: 10px 10px;
+    height: 85px;
+    background: #25726F;
+    resize: none;
+}
+
+#contact-form input, #contact-form textarea, #contact-form button {
+    width: 300px;
+    color: #D9D9D9;
+    font-size: 14px;
+    font-family: 'Roboto';
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    padding: 10px;
+    background: rgba(44, 128, 75, 0.26);
+    border: 1px solid #2C804B;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+#contact-form input::placeholder, #contact-form textarea::placeholder {
+    opacity: 0.5;
+    color: #D9D9D9;
+}
+
+footer {
+    margin: 10px 0px;
+    width: min(90%, 1200px);
+}
+
+footer hr {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    background: #D9D9D9;
+    border: 0.5px solid rgba(159, 155, 232, 0.5);
+    transform: rotate(-0.05deg);
+    opacity: 0.75;
+}
+
+footer > div {
+    width: min(90%, 1200px);
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer p {
+    font-family: 'Roboto';
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    opacity: 0.75;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    display: block;
+    margin: 0px 10px;
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .contact-container > div {
+        flex: 0.9;
+    }
+}
+
 @media screen and (max-width: 950px) {
     #landing img {
         width: 500px;
@@ -38,6 +226,48 @@ figcaption {
     figcaption {
         font-size: 25px;
         line-height: 30px;
+    }
+    .content img { 
+        height: 300px;
+    }
+    .content h1 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .content p {
+        max-width: 500px;
+        font-size: 18px;
+    }
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-container > img {
+        width: 200px;
+        height: 200px;
+        margin-right: 0px;
+    }
+
+    .contact-container > div {
+        flex: 1;
+        margin-top: -30px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contact-form {
+        margin: 20px 0px;
+    }
+    footer {
+        margin: 30px 0px;
+    }
+
+    #contact ul a {
+        color: #41E6A6;;
     }
 }
 
@@ -49,5 +279,16 @@ figcaption {
     figcaption {
         font-size: 20px;
         line-height: 25px;
+    }
+    .content img {
+        height: 250px;
+    }
+    .content h1 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .content p {
+        max-width: 350px;
+        font-size: 15px;
     }
 }

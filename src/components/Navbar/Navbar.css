@@ -1,5 +1,5 @@
 :root {
-    --navbar-bg: rgba(57, 55, 124, 0.5);
+    --navbar-bg: rgba(57, 55, 124, 0.8);
     --nav-special: #41E6A6;
 }
 
@@ -15,6 +15,7 @@
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     letter-spacing: 1.5px;
     position: fixed;
+    z-index: 10;
 }
 
 #nav-container .desktop-nav {

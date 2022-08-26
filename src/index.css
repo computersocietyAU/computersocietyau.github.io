@@ -58,3 +58,9 @@ body {
     transform: translate3d(0,5px,0);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .wave {
+    height: 150px;
+  }
+}
