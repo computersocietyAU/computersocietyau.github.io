@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Home, Navbar, Events } from './components';
 import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
 
@@ -28,13 +28,25 @@ const routes = [
 const location = new ReactLocation();
 
 const App = () => {
+  
+  const [currentPage, setCurrentPage] = useState("");
+  useEffect(() => {
+    setCurrentPage(window.location.pathname);
+  });
+  
   return (
     <Router location={location} routes={routes}>
       <div className="App">
         <Navbar />
         <Outlet />
-        <div className="wave"></div>
-        <div className="wave"></div>
+        {
+          currentPage === "/" ?
+          <>
+              <div className="wave"></div>
+              <div className="wave"></div>
+          </> :
+          <div></div>
+        }
         <div className='background'></div>
       </div>
     </Router>
