@@ -1,0 +1,156 @@
+.event-card {
+    width: 90vw;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+
+    border-radius: 37px;
+    display: flex;
+    height: 50vh;
+    position: relative;
+}
+
+.event-cover {
+
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 2rem;
+}
+
+.event-details {
+    width: 65%;
+    padding-top: 1rem;
+}
+
+.event-cover-img {
+    width: 100%;
+    height: auto;
+}
+
+.event-heading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    margin-block: 1rem;
+    /* identical to box height, or 300% */
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.event-desc {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 28px;
+    padding-right: 2rem;
+    /* or 160% */
+
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+}
+
+.event-schedule div {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: start;
+    margin: 10px;
+    text-transform: uppercase;
+
+}
+
+.events-register-btn {
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    margin-inline-end: 3rem;
+    text-transform: uppercase;
+    background-color: #D9D9D9;
+    color: #192444;
+    border-radius: 15px;
+    padding: 10px 1.5rem;
+}
+
+.events-register-btn:hover {
+    background-color: #41e6a7b7;
+    color: #D9D9D9;
+}
+
+
+@media screen and (max-width: 950px) {
+    .event-card {
+
+        width: 100vw;
+        height: fit-content;
+        padding-block: 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 0%;
+        padding-bottom: 4rem;
+
+
+    }
+
+    .event-cover {
+        width: 90%;
+        margin: auto;
+    }
+
+    .event-details {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .event-heading {
+        font-size: 1.4rem;
+    }
+
+    .event-desc {
+        font-size: 14px;
+        padding-inline: 0.5rem;
+    }
+
+    .event-schedule {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgba(65, 230, 166, 0.5);
+        border-bottom: 1px solid rgba(65, 230, 166, 0.5);
+        margin-block: 1.5rem;
+        padding-block: 0.5rem;
+    }
+
+    .event-schedule div {
+        font-size: 14px;
+        gap: 0.4rem;
+
+    }
+
+    .events-register-btn {
+        font-size: 14px;
+        padding: 0.5rem 0.3rem;
+        position: static;
+        width: 150px;
+        margin-inline-end: 0rem;
+        margin-block-start: 1rem;
+
+
+
+
+    }
+
+}

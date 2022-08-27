@@ -1,0 +1,26 @@
+.subhead {
+    color: '#fff';
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    
+    
+    
+}
+
+.subhead p {
+    width: fit-content;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+
+@media screen and (max-width: 900px) {
+    .subhead{
+        font-size: 20px;
+    }
+}
