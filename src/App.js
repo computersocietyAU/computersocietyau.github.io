@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Navbar } from './components';
+import { Home, Navbar, Events } from './components';
 import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
 
 const routes = [
@@ -9,7 +9,7 @@ const routes = [
   },
   {
     path:'/events',
-    element: <div>Events Page</div>
+    element: <Events/>
   },
   {
     path: '/blogs',
