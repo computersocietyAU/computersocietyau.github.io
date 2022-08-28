@@ -33,9 +33,10 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Outlet />
-        <div className="wave"></div>
-        <div className="wave"></div>
-        <div className='background'></div>
+        <div className="wave fixed bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px]"></div>
+        <div className="wave fixed bottom-[-50px] w-[6400px] h-[150px] sm:h-[198px]"></div>
+        <div className='background fixed inset-0 z-[-1] bg-no-repeat bg-center bg-cover'>
+        </div>
       </div>
     </Router>
   );

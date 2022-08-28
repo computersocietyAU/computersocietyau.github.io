@@ -13,32 +13,17 @@ body {
 }
 
 .background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
   background: url("../public/entire-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .wave {
-  background: url("../public/bg.svg") repeat-x; 
-  position: fixed;
-  bottom: -15px;
-  width: 6400px;
-  height: 198px;
+  background: url("../public/bg.svg") repeat-x;
   animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
 
 .wave:nth-of-type(2) {
-  bottom: -50px;
-  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;;
-  opacity: 1;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
 }
 
 @keyframes wave {
@@ -56,12 +41,6 @@ body {
   }
   50% {
     transform: translate3d(0,5px,0);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .wave {
-    height: 150px;
   }
 }
 
