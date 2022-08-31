@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import "./Navbar.css";
 
 const Navbar = () => {
 
@@ -10,12 +9,12 @@ const Navbar = () => {
   const navLinks = ['/', '/events', '/workshops', '/blogs', '/team'];
 
   return (
-    <nav id='nav-container' className='bg-navbarBg w-full min-h-[12vh] pr-[30px] pl-[20px] fixed z-[10] tracking-[1.5px]'>
+    <nav id='nav-container' className='bg-navbarBg w-full min-h-[12vh] pr-[30px] pl-[20px] fixed z-[10] tracking-[1.5px] shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)]'>
       <div className='desktop-nav max-w-[1600px] my-0 mx-auto h-[11vh] lg:h-[12vh] flex items-center justify-between'>
         <div id='nav-logo' className='flex-1 lg:flex-[0.25] text-navSpecial text-2xl leading-6'>
           <a className="no-underline font-navLogo" href='/'>💻 CSAU</a>
         </div>
-        <ul ref={navElem} className={"lg:flex hidden justify-between items-center flex-1 md:flex-[0.5] lg:flex-[0.65] list-none translate-y-0" + (!navView ? ' hide translate-y-[-200%]' : '')}>
+        <ul ref={navElem} className={"lg:flex hidden justify-between items-center flex-1 md:flex-[0.5] lg:flex-[0.65] list-none translate-y-0 ease-in-out duration-500" + (!navView ? ' hide translate-y-[-200%]' : '')}>
           {navItems.map((nav, i) => {
             let isActive = window.location.pathname === navLinks[i];
             return <li key={i} className={isActive ? 'active text-navSpecial' : ''}> 
@@ -35,7 +34,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className={"mobile-nav block lg:hidden pb-[15px]" + (!navView ? ' hide hidden' : '')}>
-        <ul className='text-center list-none '>
+        <ul className='text-center list-none ease-in-out duration-500 '>
           {navItems.map((nav, i) => {
             let isActive = window.location.pathname === navLinks[i];
             return <li key={i} className={"my-[5px]" + (isActive ? ' active text-navSpecial' : '')}> 

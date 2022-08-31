@@ -26,6 +26,11 @@ body {
   animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
 }
 
+#contact-form input::placeholder, #contact-form textarea::placeholder {
+  opacity: 0.5;
+  color: #D9D9D9;
+}
+
 @keyframes wave {
   0% {
     margin-left: 0;

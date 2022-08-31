@@ -1,7 +1,0 @@
-#nav-container {
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.desktop-nav ul, .mobile-nav ul  {
-    transition: 0.5s ease-in-out;
-}
