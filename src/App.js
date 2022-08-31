@@ -1,15 +1,15 @@
 import React from 'react';
-import { Home, Navbar } from './components';
+import {  Navbar, Events } from './components';
 import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
 
 const routes = [
   {
     path: '/',
-    element: <Home />
+    element: <div>Home page</div>,
   },
   {
     path:'/events',
-    element: <div>Events Page</div>
+    element: <Events/>
   },
   {
     path: '/blogs',
@@ -33,10 +33,7 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Outlet />
-        <div className="wave fixed bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px]"></div>
-        <div className="wave fixed bottom-[-50px] w-[6400px] h-[150px] sm:h-[198px]"></div>
-        <div className='background fixed inset-0 z-[-1] bg-no-repeat bg-center bg-cover'>
-        </div>
+        <div className='background'></div>
       </div>
     </Router>
   );

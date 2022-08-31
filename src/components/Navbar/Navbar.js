@@ -7,8 +7,8 @@ const Navbar = () => {
   const navElem = useRef(); 
 
   return (
-    <nav id='nav-container' className='bg-navbarBg w-full min-h-[12vh] pr-[30px] pl-[20px] fixed z-[10] tracking-[1.5px] shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)]'>
-      <div className='desktop-nav max-w-[1600px] my-0 mx-auto h-[11vh] lg:h-[12vh] flex items-center justify-between'>
+    <nav id='nav-container' className='bg-navbarBg w-full min-h-[10vh] pr-[30px] pl-[20px] fixed z-[10] tracking-[1.5px] shadow-[inset_0px_4px_4px_rgba(0,0,0,0.25)]'>
+      <div className='desktop-nav max-w-[1600px] my-0 mx-auto h-[10vh] lg:h-[10vh] flex items-center justify-between'>
         <div id='nav-logo' className='flex-1 lg:flex-[0.25] text-navSpecial text-2xl leading-6'>
           <a className="no-underline font-navLogo" href='/'>💻 CSAU</a>
         </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
             return (
               <div key={to} className="my-[5px]">
                 <Link
-                  className='no-underline color-white text-sm sm:text-[15px] md:text-[17.6px] sm:leading-[1.75em] cursor-pointer hover:border-b-[3.5px] hover:border-solid hover:border-navSpecial'
+                  className='no-underline color-white text-sm sm:text-[17px] md:text-[20px] sm:leading-[1.75em] cursor-pointer hover:border-b-[3.5px] hover:border-solid hover:border-navSpecial'
                   to={to}
                   getActiveProps={() => ({ className: `text-navSpecial` })}
                   activeOptions={{

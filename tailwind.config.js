@@ -20,7 +20,8 @@ module.exports = {
     fontFamily: {
       'navLogo': ["'Goldman'", 'cursive'],
       'landingText': ["'Poor Story'", 'cursive'],
-      'linksText': ["'Roboto'", 'sans-serif']
+      'linksText': ["'Roboto'", 'sans-serif'],
+      'main': ["'Poppins'", 'sans-serif']
     },
     screens: {
       'xlg': '950px',
