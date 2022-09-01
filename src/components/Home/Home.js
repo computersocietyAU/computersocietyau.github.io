@@ -114,13 +114,10 @@ const Home = () => {
 
   return (
     <main id='home' className='h-[100vh] overflow-scroll overflow-x-hidden relative snap-y snap-mandatory scroll-pt-0'>
-      {waves ?
-          <>
-          <div className="wave fixed bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px]"></div>
-          <div className="wave fixed bottom-[-50px] w-[6400px] h-[150px] sm:h-[198px]"></div>
-          </> :
-          <></>
-      }
+
+      <div className={"wave fixed bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px] " + (waves ? "opacity-100" : "opacity-0")}></div>
+      <div className={"wave fixed bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px] " + (waves ? "opacity-100" : "opacity-0")}></div>
+
       <section className='w-[100vw] h-[102vh] flex justify-center items-center snap-start snap-normal' id='landing'>
         <figure className='font-landingText block relative'>
           <img className='w-[400px] md:w-[500px] lg:w-[650px] h-[200px] md:h-[230px] lg:h-[320px]' 
