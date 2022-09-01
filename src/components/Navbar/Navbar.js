@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import {Link} from '@tanstack/react-location'
+import { Link } from '@tanstack/react-location'
 
 const Navbar = () => {
 
@@ -28,7 +28,7 @@ const Navbar = () => {
                     exact: to === ".",
                   }}
                 >
-                  {label}
+                  <p className='hover:border-b-[3.5px] hover:border-solid hover:border-navSpecial'>{label}</p>
                 </Link>
               </div>
             );
@@ -53,24 +53,17 @@ const Navbar = () => {
             return (
               <div key={to} className="my-[5px]">
                 <Link
-                  className='no-underline color-white text-sm sm:text-[17px] md:text-[20px] sm:leading-[1.75em] cursor-pointer hover:border-b-[3.5px] hover:border-solid hover:border-navSpecial'
                   to={to}
                   getActiveProps={() => ({ className: `text-navSpecial` })}
                   activeOptions={{
                     exact: to === ".",
                   }}
                 >
-                  {label}
+                  <p>{label}</p>
                 </Link>
               </div>
             );
           })}
-          {/* {navItems.map((nav, i) => {
-            let isActive = window.location.pathname === navLinks[i];
-            return <li key={i} className={"my-[5px]" + (isActive ? ' active text-navSpecial' : '')}> 
-              <a className="" href={navLinks[i]}>{nav}</a>
-            </li>;
-          })} */}
         </ul>
       </div>
     </nav>
