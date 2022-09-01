@@ -33,7 +33,8 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Outlet />
-        <Footer/>
+        <div className='background fixed inset-0 z-[-1] bg-no-repeat bg-center bg-cover'>
+        </div>
       </div>
     </Router>
   );

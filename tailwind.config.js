@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      navbarBg: '#39377ccc',
+      navbarBg: '#39377c',
       navSpecial: '#41E6A6' ,
       white: '#FFFFFF',
       formInput: '#28857acc',
