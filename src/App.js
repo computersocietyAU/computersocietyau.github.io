@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Navbar, Events,Home} from './components';
+import {  Navbar, Events, Home, Footer } from './components';
 import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
 
 const routes = [
@@ -33,10 +33,7 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Outlet />
-        <div className="wave fixed bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px]"></div>
-        <div className="wave fixed bottom-[-50px] w-[6400px] h-[150px] sm:h-[198px]"></div>
-        <div className='background fixed inset-0 z-[-1] bg-no-repeat bg-center bg-cover'>
-        </div>
+        <Footer/>
       </div>
     </Router>
   );
