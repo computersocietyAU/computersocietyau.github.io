@@ -9,6 +9,9 @@
   --swiper-navigation-size: 20px !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -19,16 +22,7 @@ body {
 }
 
 .background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
   background: url("../public/entire-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .section-bg {
@@ -40,19 +34,36 @@ body {
 
 .wave {
   background: url("../public/bg.svg") repeat-x;
-  position: fixed;
-  bottom: -15px;
-  width: 6400px;
-  height: 198px;
   animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
+  z-index: 10;
 }
 
 .wave:nth-of-type(2) {
-  bottom: -50px;
   animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
-  ;
   opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6361a7cc;
+  border-radius: 10px;
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: #6361a7cc transparent;
+    scrollbar-width: thin;
+  }
 }
 
 @keyframes wave {
@@ -74,12 +85,6 @@ body {
 
   50% {
     transform: translate3d(0, 5px, 0);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .wave {
-    height: 150px;
   }
 }
 
