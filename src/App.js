@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Navbar, Events, Home, Footer } from './components';
+import {  Navbar, Events, Home } from './components';
 import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
 
 const routes = [
