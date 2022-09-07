@@ -1,5 +1,4 @@
 #Blog{
-    /* background-color: rgb(123, 20, 213); */
     background: rgb(34,193,195);
     background: linear-gradient(105deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
@@ -15,26 +14,24 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 #about-blog{
-    height: 470px;
+    height: 450px;
     width: 370px;
     left: 51px;
     top: 329px;
     border-radius: 46px;
     background: #41E6A61A;
-    /* background: #373B44; 
-    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  
-    background: linear-gradient(to right, #4286f4, #373B44);  */
+    margin: 10px;
 }
 #about-blog-latest{
-    height: 470px;
-    width: 370px;
+    height: 450px;
+    width: 350px;
     left: 51px;
     top: 329px;
     border-radius: 46px;
     background: #11203899;
+    margin: auto;
 }
 img{
-    /* height: 224.91453552246094px; */
     width: 370px;
     left: 36.110107421875px;
     top: 0px;
@@ -104,8 +101,8 @@ img{
     color: #FFFFFF;
 }
 #blog-div{
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 10px;
     justify-content: space-around;
 }
@@ -117,16 +114,19 @@ img{
     padding-bottom: 40px;
 }
 #latest-img{
-    height: 169px;
+    height: 183px;
     width: 249px;
     left: 634px;
     top: 265px;
     border-radius: 0px;
+    object-fit: cover;
+
 }
 #latest-right{
     display: grid;
     grid-template-columns: auto auto;
     margin-left: 20px;
+    width: 90%;
 }
 #date-latest{
     left: 54.43%;
@@ -195,17 +195,67 @@ img{
 }
 #hor-line{
     margin-top: 10px;
-    width: 856px;
+    width: 100%;
     height: 0px;
     left: 624px;
     top: 430px;
     border: 1px solid #FFFFFF;
 }
 #latest-blog-img{
-    /* background-image: url('WhatsApp Image 2022-08-22 at 6.31.36 PM (1).jpeg'); */
     background-color: #41e6a7;
+    background-size: cover;
 }
 #our-blog-img{
     background-image: url('WhatsApp Image 2022-08-22 at 6.34.14 PM.jpeg');
     padding-bottom: 50px;
+    background-size: cover;
+}
+/* Media Queries */
+/* Above Tablet */
+@media only screen and (min-width: 1024px) {
+}
+
+/* Both Tablet and Mobile */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Tablet only */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #blog-latest{
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 7px;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+}
+
+/* Mobile only */
+@media only screen and (max-width: 767px) {
+    #blog-latest{
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 5px;
+        justify-content: space-between;
+        padding-bottom: 15px;
+    }
+    #date-latest{
+        font-size: 13px;
+    }
+    #author-latest{
+        font-size: 14px;
+    }
+    #title-latest{
+        font-size: 20px;
+    }
+    #content-latest{
+        font-size: 14px;
+    }
+    #latest-img{
+        height: 200px;
+        width: 270px;
+        left: 634px;
+        top: 265px;
+        border-radius: 0px;
+    }
 }

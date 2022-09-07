@@ -3,6 +3,15 @@ import {useNavigate} from 'react-router-dom';
 
 function Blog() {
     let navigate=useNavigate();
+    let latestblog={
+        date: "11th January, 2022;",
+        title: "Rewind Chapter",
+        author: "By Anonymous",
+        description: "Ramkumar, an alumnus of College of Engineering Guindy completed his BE Computer Science and Engineering in the year .Let us rewind and take a look at his journey which started from CEG.",
+        content1: "In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!",
+        content2: "In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website! In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website! In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!",
+        imglink: "https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png"
+    }
     let ourblog=[
         {
             date: "11th January, 2022;",
@@ -49,7 +58,7 @@ function Blog() {
                         <div id="date">
                             11th January, 2022;
                         </div>
-                        <div id="blog-title" onClick={()=>navigate('/explore')}>
+                        <div id="blog-title" onClick={()=>navigate('/explore',{ state: { content: latestblog } })}>
                             Rewind Chapter
                         </div>
                         <div id="author">
@@ -137,5 +146,4 @@ function Blog() {
     </div>
   );
 }
-
 export default Blog;
