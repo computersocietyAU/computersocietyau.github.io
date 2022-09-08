@@ -1,17 +1,44 @@
-// import logo from './logo.svg';
-import './App.css';
-import Blog from './Components/Blog';
-import {Routes, Route} from 'react-router-dom';
-import ExploreBlog from './Components/ExploreBlog';
+import React from 'react';
+import {  Navbar, Events, Home } from './components';
+import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
+import Blog from './components/Blog/Blog';
+import ExploreBlog from './components/Blog/ExploreBlog';
 
-function App() {
+const routes = [
+  {
+    path: '/',
+    element: <Home/>
+  },
+  {
+    path:'/events',
+    element: <Events/>
+  },
+  {
+    path: '/blogs',
+    element: <Blog />
+  },
+  {
+    path: '/explore',
+    element: <ExploreBlog />
+  },
+  {
+    path:'/team',
+    element: <div>Teams Page</div>
+  },
+]
+
+const location = new ReactLocation();
+
+const App = () => {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Blog />}></Route>
-        <Route path="/explore" element={<ExploreBlog />}></Route>
-      </Routes>
-    </div>
+    <Router location={location} routes={routes}>
+      <div className="App">
+        <Navbar />
+        <Outlet />
+        <div className='background fixed inset-0 z-[-1] bg-no-repeat bg-center bg-cover'>
+        </div>
+      </div>
+    </Router>
   );
 }
 

@@ -1,17 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --swiper-theme-color: #d9d9d9 !important;
+  --swiper-navigation-size: 20px !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  background: #112038;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+.background {
+  background: url("../public/entire-bg.png");
+}
+
+.section-bg {
+  background: url('../public/section-img.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.wave {
+  background: url("../public/bg.svg") repeat-x;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  transition: 0.35s ease;
+}
+
+.wave:nth-of-type(2) {
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6361a7cc;
+  border-radius: 10px;
+}
+
+#img-head{
+  background: url('/public/blogBg.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#Blog .latest-blogs {
+  background: url("/public/section-img.png");
+}
+
+.blog-right-container {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.blog-right-container::-webkit-scrollbar { 
+  display: none; 
+}
+
+.blog-left-img {
+  background-image: url("https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 1280px) {
+
+  .blog-right-container {
+      margin: 0 auto 3em;
+  }
+  
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: #6361a7cc transparent;
+    scrollbar-width: thin;
+  }
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -3200px;
+  }
+}
+
+@keyframes swell {
+
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
