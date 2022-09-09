@@ -34,7 +34,41 @@ module.exports = {
       'xlg': '950px',
       ...defaultTheme.screens,
     },
-    extend: {},
+    extend: {
+      borderRadius: {
+        'extralarge': '12rem'
+      },
+      visibility: ["group-hover"],
+      height: {
+        'med': '768px',
+      },
+      width: {
+        '320': '320px',
+        '424': '424px',
+        '1024': '1024px',
+        '1440': '1440px',
+        '2560': '2560px',
+        '1280': '1364px',
+        '768': '768px',
+      },
+      height:{
+        'he':'1440px',
+      },
+      fontSize: {
+        'tiny': '.50rem',
+      },
+      fontFamily: {
+        'pop': ['Poppins', 'sans-serif'],
+      },
+      screens: {
+        '2k': '2000px',
+        '1k': '1440px',
+        'tab': '768px',
+        'k':'1024px',
+        'mob':'425px',
+        'mob-sm':'320px',
+      },
+    },
   },
   plugins: [],
 }

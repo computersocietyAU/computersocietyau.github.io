@@ -1,5 +1,6 @@
 import React from 'react';
 import {  Navbar, Events, Home } from './components';
+import Team  from './components/Team/Team';
 import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
 import Blog from './components/Blog/Blog';
 import ExploreBlog from './components/Blog/ExploreBlog';
@@ -23,7 +24,7 @@ const routes = [
   },
   {
     path:'/team',
-    element: <div>Teams Page</div>
+    element: <Team />
   },
 ]
 
