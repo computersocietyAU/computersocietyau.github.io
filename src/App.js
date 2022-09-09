@@ -1,6 +1,8 @@
 import React from 'react';
 import {  Navbar, Events, Home } from './components';
 import { Router, Outlet, ReactLocation} from '@tanstack/react-location';
+import Blog from './components/Blog/Blog';
+import ExploreBlog from './components/Blog/ExploreBlog';
 
 const routes = [
   {
@@ -13,11 +15,11 @@ const routes = [
   },
   {
     path: '/blogs',
-    element: <div>Blogs Page</div>,
-    // children:{
-    //  path:':blogId',
-    //  element: <div>Blog ID Page</div>
-    // }
+    element: <Blog />
+  },
+  {
+    path: '/explore',
+    element: <ExploreBlog />
   },
   {
     path:'/team',

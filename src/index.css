@@ -58,6 +58,42 @@ body {
   border-radius: 10px;
 }
 
+#img-head{
+  background: url('/public/blogBg.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#Blog .latest-blogs {
+  background: url("/public/section-img.png");
+}
+
+.blog-right-container {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+
+.blog-right-container::-webkit-scrollbar { 
+  display: none; 
+}
+
+.blog-left-img {
+  background-image: url("https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 1280px) {
+
+  .blog-right-container {
+      margin: 0 auto 3em;
+  }
+  
+}
+
 @supports (scrollbar-color: red blue) {
   * {
     scrollbar-color: #6361a7cc transparent;

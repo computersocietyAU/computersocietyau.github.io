@@ -15,13 +15,20 @@ module.exports = {
       inputBorder: '#2C804B',
       buttonBg: '#2c804b42',
       footerRule: '#D9D9D9',
-      footerBorder: '#9f9be880'
+      footerBorder: '#9f9be880',
+      blogCardBg: '#11203899',
+      ourBlogBg: '#41e6a61a',
+      black: '#000000',
+      blogText: '#47515E'
     },
     fontFamily: {
       'navLogo': ["'Goldman'", 'cursive'],
       'landingText': ["'Poor Story'", 'cursive'],
       'linksText': ["'Roboto'", 'sans-serif'],
-      'main': ["'Poppins'", 'sans-serif']
+      'main': ["'Poppins'", 'sans-serif'],
+      'blog': ["'Lato'", 'sans-serif'],
+      'exploreBlogText': ["'Plus Jakarta Sans'", 'sans-serif'],
+      'expBlogContent': ["'Inter'", 'sans-serif']
     },
     screens: {
       'xlg': '950px',

@@ -12,7 +12,7 @@ const Navbar = () => {
         <div id='nav-logo' className='flex-1 lg:flex-[0.25] text-navSpecial text-2xl leading-6'>
           <a className="no-underline font-navLogo" href='/'>💻 CSAU</a>
         </div>
-        <ul ref={navElem} className={"lg:flex hidden justify-between items-center flex-1 md:flex-[0.5] lg:flex-[0.65] list-none translate-y-0 ease-in-out duration-500" + (!navView ? ' hide translate-y-[-200%]' : '')}>
+        <ul ref={navElem} className={"lg:flex hidden justify-between items-center flex-1 md:flex-[0.5] lg:flex-[0.65] list-none translate-y-0 ease-in-out duration-500" + (!navView ? ' hide translate-y-[-210%]' : '')}>
           {[
             [".", "Home"],
             ["events", "Events"],
