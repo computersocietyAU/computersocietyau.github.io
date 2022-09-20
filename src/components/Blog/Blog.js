@@ -1,6 +1,37 @@
 import Subheading from '../Events/Subheading/Subheading';
+import sanityclient from "../../sanityclient"
+import { useEffect, useState } from 'react';
 
 const Blog = () => {
+
+    const [blogs,setBlogs] = useState([])
+
+    useEffect(()=>{
+        sanityclient
+      .fetch(
+        `*[_type == "blog"] {
+        title,
+        slug,
+        body,
+        author,
+        publishedAt,
+        mainImage {
+          asset -> {
+            _id,
+            url
+          },
+          alt
+        }
+      }`
+      )
+      .then((data) => {
+        console.log(data)
+        setBlogs(data)
+        })
+      .catch(console.error)
+    },[])
+
+
     let ourblog=[
         {
             date: "11th January, 2022",

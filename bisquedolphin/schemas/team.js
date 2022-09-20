@@ -14,6 +14,16 @@ export default {
         type: 'string',
       },
       {
+        name: 'designation',
+        title: 'Designation',
+        type: 'string',
+      },
+      {
+        name: 'year',
+        title: 'Year',
+        type: 'string',
+      },
+      {
         name: 'slug',
         title: 'Slug',
         type: 'slug',
