@@ -1,5 +1,5 @@
 import Subheading from '../Events/Subheading/Subheading';
-import sanityclient from "../../sanityclient"
+import client from "../../client"
 import { useEffect, useState } from 'react';
 
 const Blog = () => {
@@ -7,7 +7,7 @@ const Blog = () => {
     const [blogs,setBlogs] = useState([])
 
     useEffect(()=>{
-        sanityclient
+    client
       .fetch(
         `*[_type == "blog"] {
         title,

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Subheading from './Subheading/Subheading';
 import EventCards from './EventCards/EventCards';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import client from "../../client";
 
 import 'swiper/css/bundle';
 // import './Events.css';
@@ -66,6 +66,32 @@ const events = [{
 
 function Events() {
 
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+      client
+        .fetch(
+          `*[_type == "event"] {
+        title,
+        location,
+        slug,
+        date,
+        description,
+        mainImage {
+          asset -> {
+            _id,
+            url
+          },
+          alt
+        }
+      }`
+        )
+        .then((data) => {
+          console.log(data);
+          setEvents(data);
+        })
+        .catch(console.error);
+    }, []);
 
     return (
         <div className='events-page'>
