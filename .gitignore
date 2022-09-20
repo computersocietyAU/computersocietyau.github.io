@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/bisquedolphin/node_modules
+
 # testing
 /coverage
 
