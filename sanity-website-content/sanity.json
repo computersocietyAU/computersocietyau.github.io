@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-    "name": "bisque-dolphin"
+    "name": "sanity-website-content"
   },
   "api": {
-    "projectId": "8c2dnw4h",
-    "dataset": "csau-content"
+    "projectId": "wzu06sd5",
+    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
