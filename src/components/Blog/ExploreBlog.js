@@ -1,5 +1,11 @@
+import { useMatch } from '@tanstack/react-location'
+import BlockContent from "@sanity/block-content-to-react"
 
 const ExploreBlog = () => {
+
+    const {data:{blog}} = useMatch()
+
+    console.log(blog)
  
     const content = {
         date: "Aug 11, 2022",
@@ -12,40 +18,33 @@ const ExploreBlog = () => {
     }
   return (
     <div className="explore-blog pt-[4.5em] font-exploreBlogText">
-        <div id="img-head" className='h-[43vh] flex justify-center items-center'>
-            <img alt='zoho logo' src='/zoho.png' className='block w-[min(88%,550px)] h-[80%] rounded-[45px] object-cover' />
+        <div className='h-[43vh] flex justify-center items-center'>
+            <img alt='zoho logo' src={blog.mainImage.asset.url} className='block w-full h-full rounded-[45px] object-cover' />
         </div>
         <div className="explore-blog-container py-[2.3em] bg-white">
             <div className='blog-wrapper w-[min(90%,1350px)] my-0 mx-auto'>
                 <div id="title" className="text-[25px] font-bold mb-[20px] md:text-[35px] leading-[50px] text-center text-black">
-                    {content.title}
+                    {blog.title}
                 </div>
                 <div id="content-1" className="text-justify text-[15px] md:text-[18px] leading-[29px] font-bold md:text-center text-blogText w-[88%] md:w-[min(100%,900px)] my-0 mx-auto tracking-[1.3px]">
-                    {content.description}
+                    {blog.summary}
                 </div>
                 <div id="content-2" className='w-[min(100%,900px)] my-[20px] mx-auto flex justify-around items-center font-bold text-[14px] md:text-[17px] leading-[120px] text-center text-black'>
                     <div id="icons-main" className='flex flex-wrap items-center'>
-                        <i class="fa-regular fa-user fa-2x"></i>
-                        <label className='ml-[20px] tracking-[1.5px]'> {content.author}</label>
+                        <i className="fa-regular fa-user fa-2x"></i>
+                        <label className='ml-[20px] tracking-[1.5px]'> {blog.author}</label>
                     </div>
                     <div id="icons-main" className='flex flex-wrap items-center'>
-                        <i class="fa-regular fa-calendar fa-2x"></i>
-                        <label className='ml-[20px] tracking-[1.5px]'>  {content.date}</label>
+                        <i className="fa-regular fa-calendar fa-2x"></i>
+                        <label className='ml-[20px] tracking-[1.5px]'>  {blog.publishedAt}</label>
                     </div>
                 </div>
-                <div className='blog-wrapper-2 w-[min(1100px,90%)] my-0 mx-auto pt-[2.5em] pb-[4em] md:pt-[7em] md:pb-[3em]'>
-                    <div id="content-3" className='text-[23px] font-bold md:text-[35px] font-expBlogContent my-[10px] leading-[35px] md:leading-[45px] tracking-[0.4px] text-black text-left'>
-                        <label>What Is What?</label>
-                    </div>
-                    <div id="content-4" className='font-semibold text-[15px] md:text-[20px] ml-[28px] mb-[35px] opacity-75 font-expBlogContent my-[10px] leading-[35px] md:leading-[45px] tracking-[0.4px] text-black text-left'>
-                        {content.content1}
-                    </div>
-                    <div id="content-3" className='text-[23px] font-bold md:text-[35px] font-expBlogContent my-[10px] leading-[35px] md:leading-[45px] tracking-[0.4px] text-black text-left'>
-                        <label>What Is What?</label>
-                    </div>
-                    <div id="content-4" className='font-semibold text-[15px] md:text-[20px] ml-[28px] mb-[35px] opacity-75 font-expBlogContent my-[10px] leading-[35px] md:leading-[45px] tracking-[0.4px] text-black text-left'>
-                        {content.content2}
-                    </div>
+                <div className="w-full h-full m-5 text-black">
+                    <BlockContent
+                    blocks={blog.body}
+                    projectId="wzu06sd5"
+                    dataset="production"
+                    />
                 </div>
             </div>
         </div>

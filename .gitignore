@@ -6,6 +6,7 @@
 .pnp.js
 
 /sanity-website-content/node_modules
+/bisquedolphin
 
 # testing
 /coverage

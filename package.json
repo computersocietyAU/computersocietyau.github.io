@@ -7,6 +7,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.4.1",
     "@tanstack/react-location": "^3.7.4",
     "@testing-library/jest-dom": "^5.16.5",
