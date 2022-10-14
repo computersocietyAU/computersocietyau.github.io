@@ -19,6 +19,11 @@ export default {
         type: 'string',
       },
       {
+        name: 'domain',
+        title: 'Domain',
+        type: 'string',
+      },
+      {
         name: 'year',
         title: 'Year',
         type: 'string',

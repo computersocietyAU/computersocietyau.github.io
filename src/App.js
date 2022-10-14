@@ -46,7 +46,12 @@ const routes = [
   },
   {
     path:'/team',
-    element: <Team />
+    element: <Team />,
+    loader: async () => {
+      return {
+        team: await fetchTeam(),
+      };
+    },
   },
 ]
 
@@ -77,6 +82,26 @@ async function fetchBlogs(){
     summary,
     publishedAt,
     mainImage {
+      asset -> {
+        _id,
+        url
+      },
+      alt
+    }
+  }`
+  )
+  return data
+}
+
+async function fetchTeam(){
+  const data = await client
+  .fetch(
+    `*[_type == "team"] {
+    name,
+    lnurl,
+    designation,
+    year,
+    image {
       asset -> {
         _id,
         url

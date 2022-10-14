@@ -105,7 +105,7 @@ const Blog = () => {
                                     <img className='h-[48%] rounded-[27px] bg-cover bg-no-repeat bg-center w-full' src={value.mainImage.asset.url}/>
                                     <div id="details" className='py-[12px] px-[18px] tracking-[1px] font-blog'>
                                         <div id="date" className='mt-[17px] md:mt-0 font-bold text-[15px] md:text-base md:leading-[20px] text-navSpecial'>
-                                            {value.publishedAt.substring(0,10)}
+                                            {value?.publishedAt.substring(0,10)}
                                         </div>
                                         <div id="blog-title" className='mt-[15px] w-max font-bold text-[17px] leading-[19px] md:text-2xl cursor-pointer border-b-2 border-solid border-white'>
                                             {value.title}
