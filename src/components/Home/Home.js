@@ -16,7 +16,7 @@ const Home = () => {
         <div className="wave absolute bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px] "></div>
         <div className="wave absolute bottom-[-15px] w-[6400px] h-[150px] sm:h-[198px] "></div>
       </section>
-      <section className='w-[100vw] min-h-[100vh] py-28' id='about1'>
+      <section className='w-[100vw] pt-20 pb-16' id='about1'>
         <div className='content w-[min(90%,1250px)] my-0 mx-auto'>
           <h1 className='py-2.5 text-navSpecial text-center text-2xl leading-[25px] md:text-3xl lg:text-[40px] lg:leading-[50px]'>
             Who we are ?
@@ -33,7 +33,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='w-[100vw] min-h-[100vh] py-28' id='about2'>
+      <section className='w-[100vw] py-10' id='about2'>
         <div className='content w-[min(90%,1250px)] my-0 mx-auto'>
           <h1 className='py-2.5 text-navSpecial text-center text-2xl leading-[25px] md:text-3xl lg:text-[40px] lg:leading-[50px]'>
             What we do ?
@@ -50,7 +50,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='w-[100vw] min-h-[80vh] pt-28 pb-32 flex justify-center items-center flex-col' id='contact'>
+      <section className='w-[100vw] pt-10 pb-3 flex justify-center items-center flex-col' id='contact'>
         <div className='contact-container flex flex-col xlg:flex-row justify-center xlg:justify-between items-center mx-auto flex-wrap pr-[15px]] xlg:pr-[60px] pl-7px w-[min(90%,1100px)]'>
           <img src='/logo.png' alt='contact-logo'
             className='block object-contain w-[200px] h-[200px] xlg:w-[250px] xlg:h-[250px] xlg:mr-[50px]'
