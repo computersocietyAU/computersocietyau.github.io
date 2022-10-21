@@ -1,130 +1,78 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Subheading from './Subheading/Subheading';
 import EventCards from './EventCards/EventCards';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import client from "../../client";
-
+import { useMatch } from '@tanstack/react-location';
 import 'swiper/css/bundle';
-// import './Events.css';
-
-import cover from './EventCards/events-cover-img.png'
-
-
-const upcomingEvents = [{
-    name: "Web Workshop",
-    cover: cover,
-    desc: "Web development is an interesting and evergreen area many people want to try their hands on. CSAU conducted a 1-day workshop on Angular JS demonstrating how to develop a simple website. The attendees had a take away of a deep understanding and knowledge after a hands-on session on the same",
-    date: "11 feb",
-    place: "Virtual"
-
-},
-{
-    name: "Web Workshop 2",
-    cover: cover,
-    desc: "Web development is an interesting and evergreen area many people want to try their hands on. CSAU conducted a 1-day workshop on Angular JS demonstrating how to develop a simple website. The attendees had a take away of a deep understanding and knowledge after a hands-on session on the same",
-    date: "11 feb",
-    place: "Virtual"
-
-}, {
-    name: "Web Workshop 3",
-    cover: cover,
-    desc: "Web development is an interesting and evergreen area many people want to try their hands on. CSAU conducted a 1-day workshop on Angular JS demonstrating how to develop a simple website. The attendees had a take away of a deep understanding and knowledge after a hands-on session on the same",
-    date: "11 feb",
-    place: "Virtual"
-
-}]
-
-const events = [{
-    name: "Web Workshop 0",
-    cover: cover,
-    desc: "Web development is an interesting and evergreen area many people want to try their hands on. CSAU conducted a 1-day workshop on Angular JS demonstrating how to develop a simple website. The attendees had a take away of a deep understanding and knowledge after a hands-on session on the same",
-    date: "11 feb",
-    place: "Virtual"
-},
-{
-    name: "Web Workshop 9",
-    cover: cover,
-    desc: "Web development is an interesting and evergreen area many people want to try their hands on. CSAU conducted a 1-day workshop on Angular JS demonstrating how to develop a simple website. The attendees had a take away of a deep understanding and knowledge after a hands-on session on the same",
-    date: "11 feb",
-    place: "Virtual"
-},
-{
-    name: "Web Workshop 8",
-    cover: cover,
-    desc: "Web development is an interesting and evergreen area many people want to try their hands on. CSAU conducted a 1-day workshop on Angular JS demonstrating how to develop a simple website. The attendees had a take away of a deep understanding and knowledge after a hands-on session on the same",
-    date: "11 feb",
-    place: "Virtual"
-},
-{
-    name: "Web Workshop 7",
-    cover: cover,
-    desc: "Web development is an interesting and evergreen area many people want to try their hands on. CSAU conducted a 1-day workshop on Angular JS demonstrating how to develop a simple website. The attendees had a take away of a deep understanding and knowledge after a hands-on session on the same",
-    date: "11 feb",
-    place: "Virtual"
-}]
 
 function Events() {
 
-    const [events, setEvents] = useState([]);
+    const { data } = useMatch();
 
-    useEffect(() => {
-      client
-        .fetch(
-          `*[_type == "event"] {
-        title,
-        location,
-        slug,
-        date,
-        description,
-        mainImage {
-          asset -> {
-            _id,
-            url
-          },
-          alt
-        }
-      }`
-        )
-        .then((data) => {
-          console.log(data);
-          setEvents(data);
-        })
-        .catch(console.error);
-    }, []);
+    const changeDateFormat = (date) => {
+      if(!date) return;
+      let convertedDate = date.substring(0, 10);
+      let dateArray = convertedDate.split("-");
+      let year = dateArray[0];
+      let month = dateArray[1];
+      let day = dateArray[2];
+      convertedDate = day + "-" + month + "-" + year;
+      return convertedDate;
+    }
 
     return (
-        <div className='events-page'>
-            <div className="section-bg pt-[14vh] h-fit w-full ">
-                <Subheading title="Upcoming Events" />
+      <div className="events-page">
+        <div className="section-bg pt-[14vh] h-fit w-full ">
+          <Subheading title="Upcoming Events" />
 
-                <Swiper
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    spaceBetween={50}
-                    slidesPerView={1}
-                    navigation
-                    pagination={{ clickable: true }}
-                    onSwiper={() => { }}
-                    onSlideChange={() => { }}
-                >
-                    {upcomingEvents.map(({ name, cover, desc, date, place }, index) => (
-                        <SwiperSlide key={index} ><EventCards name={name} cover={cover} desc={desc} date={date} place={place} btn="Register Now !" background={'rgba(25, 36, 68, 0.6)'} /></SwiperSlide>
-                    ))}
-
-                </Swiper>
-
-            </div>
-            <div className='pt-[3rem]'>
-                <Subheading title="Our Events" />
-
-                {events.map(({ name, cover, desc, date, place }, index) => (<EventCards key={index} name={name} cover={cover} desc={desc} date={date} place={place} btn="See pictures ->" background={'rgba(65, 230, 166, 0.3)'} />))}
-
-
-            </div>
-
-
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            onSwiper={() => {}}
+            onSlideChange={() => {}}
+          >
+            {data?.upcomingEvents?.map(
+              ({ title, mainImage, description, date, location }, index) => (
+                <SwiperSlide key={index}>
+                  <EventCards
+                    key={index}
+                    title={title}
+                    coverImage={mainImage.asset.url}
+                    description={description[0].children[0].text} // change to block content in sanity
+                    date={changeDateFormat(date)}
+                    location={location}
+                    buttonText="Register Now !"
+                    background={"rgba(25, 36, 68, 0.6)"}
+                  />
+                </SwiperSlide>
+              )
+            )}
+          </Swiper>
         </div>
-    )
+        <div className="pt-[3rem]">
+          <Subheading title="Our Events" />
+
+          {data?.events?.map(
+            ({ title, mainImage, description, date, location }, index) => (
+              <EventCards
+                key={index}
+                title={title}
+                coverImage={mainImage.asset.url}
+                description={description[0].children[0].text} // change to block content in sanity
+                date={changeDateFormat(date)}
+                location={location}
+                buttonText="See pictures ->"
+                background={"rgba(65, 230, 166, 0.3)"}
+              />
+            )
+          )}
+        </div>
+      </div>
+    );
 }
 
 export default Events

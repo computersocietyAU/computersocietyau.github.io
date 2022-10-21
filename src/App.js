@@ -1,7 +1,7 @@
 import React from 'react';
 import {  Navbar, Events, Home } from './components';
 import Team  from './components/Team/Team';
-import { Router, Outlet, ReactLocation, useMatch} from '@tanstack/react-location';
+import { Router, Outlet, ReactLocation } from '@tanstack/react-location';
 import Blog from './components/Blog/Blog';
 import ExploreBlog from './components/Blog/ExploreBlog';
 import client from './client';
@@ -13,7 +13,18 @@ const routes = [
   },
   {
     path:'/events',
-    element: <Events/>
+    element: <Events/>,
+    loader: async () => {
+      const data = await fetchEvents();
+      console.log(data)
+      const upcomingEvents = data.filter(event => event.upcoming);
+      const events = data
+        .filter((event) => !event.upcoming || event.upcoming === null)
+      return {
+        events: events,
+        upcomingEvents: upcomingEvents,
+      };
+    }
   },
   {    
     path: "/blog/:blogId",
@@ -32,17 +43,6 @@ const routes = [
         blogs: await fetchBlogs(),
       };
     },
-    // children: [
-    //   {
-    //     path: "/:blogId",
-    //     element: <BlogInd/>,
-    //     loader: async ({ params: { blogId } }) => {
-    //       return {
-    //         blog: await fetchBlogById(blogId),
-    //       };
-    //     },
-    //   },
-    // ],
   },
   {
     path:'/team',
@@ -89,13 +89,12 @@ async function fetchBlogs(){
       alt
     }
   }`
-  )
-  return data
+  );
+  return data;
 }
 
-async function fetchTeam(){
-  const data = await client
-  .fetch(
+async function fetchTeam() {
+  const data = await client.fetch(
     `*[_type == "team"] {
     name,
     lnurl,
@@ -109,15 +108,13 @@ async function fetchTeam(){
       alt
     }
   }`
-  )
-  return data
+  );
+  return data;
 }
 
-async function fetchBlogById(blogId){
-  console.log("Inside router")
-  const data = await client
-  .fetch(
-      `*[slug.current == "${blogId}"] {
+async function fetchBlogById(blogId) {
+  const data = await client.fetch(
+    `*[slug.current == "${blogId}"] {
       title,
       body,
       author,
@@ -131,7 +128,27 @@ async function fetchBlogById(blogId){
         alt
       }
     }`
-  )
-  console.log("Hey")
-  return data[0]
+  );
+  return data[0];
+}
+
+async function fetchEvents() {
+  const data = client.fetch(
+    `*[_type == "event"] {
+        title,
+        location,
+        slug,
+        date,
+        description,
+        mainImage {
+          asset -> {
+            _id,
+            url
+          },
+          alt
+        },
+        upcoming,
+      }`
+  );
+  return data;
 }

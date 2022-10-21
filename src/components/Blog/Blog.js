@@ -1,7 +1,5 @@
 import Subheading from '../Events/Subheading/Subheading';
-import client from "../../client"
-import { useEffect, useState } from 'react';
-import { Link,Outlet,useMatch } from '@tanstack/react-location'
+import { Link, useMatch } from '@tanstack/react-location'
 
 const Blog = () => {
     const {data} = useMatch();

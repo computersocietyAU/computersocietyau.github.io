@@ -40,6 +40,11 @@ export default {
         title: 'Description',
         type: 'blockContent',
       },
+      {
+        name: 'upcoming',
+        title: 'Upcoming Event?',
+        type: 'boolean',
+      }
     ],
   
     preview: {
