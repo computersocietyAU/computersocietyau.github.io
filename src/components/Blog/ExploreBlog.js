@@ -1,5 +1,6 @@
 import { useMatch } from '@tanstack/react-location'
 import BlockContent from "@sanity/block-content-to-react"
+import Footer from '../Footer/Footer'
 
 const ExploreBlog = () => {
 
@@ -60,6 +61,7 @@ const ExploreBlog = () => {
             <i id="icons-right" className="mb-[10px] fa-solid fa-link"></i>
             <br></br>
         </div>
+        <Footer/>
     </div>
   );
 }

@@ -10,6 +10,7 @@ import { FaInstagram } from "react-icons/fa";
 
 import client from "../../client";
 import { useMatch } from "@tanstack/react-location";
+import Footer from "../Footer/Footer";
 
 const Member = ({member}) => {
   return(
@@ -141,6 +142,7 @@ const Team = () => {
           })}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Subheading from '../Events/Subheading/Subheading';
 import { Link, useMatch } from '@tanstack/react-location'
+import Footer from '../Footer/Footer';
 
 const Blog = () => {
     const {data} = useMatch();
@@ -121,6 +122,7 @@ const Blog = () => {
                     })}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
