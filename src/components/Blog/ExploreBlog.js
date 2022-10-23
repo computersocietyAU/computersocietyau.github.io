@@ -1,9 +1,16 @@
 import { useMatch } from '@tanstack/react-location'
 import BlockContent from "@sanity/block-content-to-react"
+import { AiOutlineCalendar, AiOutlineUser, AiOutlineTwitter } from 'react-icons/ai';
+import { FaFacebookF, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const ExploreBlog = () => {
 
-    const {data:{blog}} = useMatch()
+    const {data:{blog}} = useMatch();
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+
+    const d = new Date(blog.publishedAt);
+    const publishedDate = `${months[d.getMonth()]} ${d.getDay()}, ${d.getFullYear()}`;
 
     console.log(blog)
  
@@ -17,9 +24,9 @@ const ExploreBlog = () => {
         imglink: "https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png"
     }
   return (
-    <div className="explore-blog pt-[4.5em] font-exploreBlogText">
-        <div className='h-[43vh] flex justify-center items-center'>
-            <img alt='zoho logo' src={blog.mainImage.asset.url} className='block w-full h-full rounded-[45px] object-cover' />
+    <div className="explore-blog pt-[4.5em] font-exploreBlogText select-none">
+        <div id="img-head" className='h-[43vh] flex justify-center items-center'>
+            <img alt='zoho logo' src={blog.mainImage.asset.url} className='block w-[min(88%,550px)] h-[80%] rounded-[45px] object-contain' />
         </div>
         <div className="explore-blog-container py-[2.3em] bg-white">
             <div className='blog-wrapper w-[min(90%,1350px)] my-0 mx-auto'>
@@ -31,15 +38,16 @@ const ExploreBlog = () => {
                 </div>
                 <div id="content-2" className='w-[min(100%,900px)] my-[20px] mx-auto flex justify-around items-center font-bold text-[14px] md:text-[17px] leading-[120px] text-center text-black'>
                     <div id="icons-main" className='flex flex-wrap items-center'>
-                        <i className="fa-regular fa-user fa-2x"></i>
+                        <AiOutlineUser size="2em" />
                         <label className='ml-[20px] tracking-[1.5px]'> {blog.author}</label>
                     </div>
                     <div id="icons-main" className='flex flex-wrap items-center'>
-                        <i className="fa-regular fa-calendar fa-2x"></i>
-                        <label className='ml-[20px] tracking-[1.5px]'>  {blog.publishedAt}</label>
+                        <AiOutlineCalendar size="2em" />
+                        <label className='ml-[20px] tracking-[1.5px]'> {publishedDate}</label>
                     </div>
                 </div>
-                <div className="w-full h-full m-5 text-black">
+                <hr className='h-[2px] text-blogText w-[80%] m-auto' />
+                <div className="blog-wrapper-2 w-[min(1100px,90%)] my-0 mx-auto pt-[2.5em] pb-[4em] md:pt-[4em] md:pb-[3em] text-black">
                     <BlockContent
                     blocks={blog.body}
                     projectId="wzu06sd5"
@@ -49,15 +57,21 @@ const ExploreBlog = () => {
             </div>
         </div>
         <div id="right-side" className='fixed z-[1] text-black overflow-x-hidden top-[60%] right-[2%]'>
-            <i id="icons-right" className="mb-[10px] fa fa-facebook-f"></i>
+            <a href='#'>
+                <FaFacebookF id="icons-right" className="mb-[10px]" size="1.3em" />
+            </a>
             <br></br>
-            <i id="icons-right" className="mb-[10px] fa fa-twitter"></i>
+            <a href='#'>
+                <AiOutlineTwitter id="icons-right" className="mb-[10px]" size="1.3em" />
+            </a>
             <br></br>
-            <i id="icons-right" className="mb-[10px] fa fa-instagram"></i>
+            <a href='#'>
+                <FaLinkedin id="icons-right" className="mb-[10px]" size="1.3em" />
+            </a>
             <br></br>
-            <i id="icons-right" className="mb-[10px] fa fa-pinterest"></i>
-            <br></br>
-            <i id="icons-right" className="mb-[10px] fa-solid fa-link"></i>
+            <a href='#'>
+                <FaInstagram id="icons-right" className="mb-[10px]" size="1.3em" />
+            </a>
             <br></br>
         </div>
     </div>

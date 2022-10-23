@@ -9,7 +9,7 @@ const Home = () => {
           <img className='w-[400px] md:w-[500px] lg:w-[650px] h-[200px] md:h-[230px] lg:h-[320px]' 
             src='/logo.png' alt="csau-logo" 
           /> 
-          <figcaption className='absolute top-[58%] left-[42%] text-lg md:text-xl lg:text-3xl tracking-[1px] text-navSpecial'>
+          <figcaption className='absolute top-[58%] left-[42%] text-xl lg:text-3xl tracking-[1px] text-navSpecial'>
             A meeting place for ideas
           </figcaption>
         </figure>

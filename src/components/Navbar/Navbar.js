@@ -34,7 +34,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div id='nav-icon-wrapper' className='flex-1 lg:flex-[0.25] cursor-pointer flex flex-row-reverse'>
+        <div id='nav-icon-wrapper' className='lg:invisible flex-1 lg:flex-[0.1] cursor-pointer flex flex-row-reverse'>
           <div id='nav-icon' className={"flex flex-col items-center justify-center w-max opacity-[0.45]" + (navView ? ' active opacity-[1]' : '')} onClick={() => setNavView(!navView)}>
             <img src='/line1.png' alt='line' className='block my-[2.5px] h-[3px]' id='line1' />
             <img src='/line2.png' alt='line' className='block my-[2.5px] h-[3px]' id='line2' />

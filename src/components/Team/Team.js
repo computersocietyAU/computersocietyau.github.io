@@ -38,6 +38,8 @@ const Team = () => {
 
   const {data:{team}} = useMatch()
 
+  console.log(team);
+
   return (
     <div>
       <br></br>
@@ -145,4 +147,13 @@ const Team = () => {
   );
 };
 
-export default Team;
+
+const newTeam = () => {
+  return (
+    <div>
+
+    </div>
+  );
+}
+
+export default newTeam;
