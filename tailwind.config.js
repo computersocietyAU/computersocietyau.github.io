@@ -19,7 +19,9 @@ module.exports = {
       blogCardBg: '#11203899',
       ourBlogBg: '#41e6a61a',
       black: '#000000',
-      blogText: '#47515E'
+      blogText: '#47515E',
+      cardBg: '#19244499',
+      imgBorder: '#41e6a699'
     },
     fontFamily: {
       'navLogo': ["'Goldman'", 'cursive'],

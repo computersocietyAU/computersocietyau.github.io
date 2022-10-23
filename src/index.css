@@ -66,8 +66,18 @@ body {
 }
 
 
-#Blog .latest-blogs {
+#Blog .latest-blogs, .president-card, .domain {
   background: url("/public/section-img.png");
+}
+
+.president-card:hover > div {
+  background: #182241bb;
+}
+
+.cardActive:hover {
+  -webkit-box-shadow:inset 0px 0px 0px 2px rgb(226, 226, 226);
+  -moz-box-shadow:inset 0px 0px 0px 2px rgb(226, 226, 226);
+  box-shadow:inset 0px 0px 0px 2px rgb(226, 226, 226);
 }
 
 .blog-right-container {
@@ -84,6 +94,35 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.glassIco {
+  color: #fff;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  overflow: hidden;
+}
+.glassIco, .glassIco * {
+  transition: 200ms;
+}
+.glassIco > * {
+  opacity: 0.8;
+}
+
+#slider2 .slick-slide {
+  width: 330px !important;
+  margin: 0px 20px;
+}
+
+.slick-slider {
+  max-height: 500px !important;
 }
 
 @media only screen and (max-width: 1280px) {

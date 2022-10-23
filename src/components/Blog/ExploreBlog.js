@@ -14,15 +14,15 @@ const ExploreBlog = () => {
 
     console.log(blog)
  
-    const content = {
-        date: "Aug 11, 2022",
-        title: "Rewind Chapter",
-        author: "Anonymous",
-        description: "Ramkumar, an alumnus of College of Engineering Guindy completed his BE Computer Science and Engineering in the year .Let us rewind and take a look at his journey which started from CEG.",
-        content1: "In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!",
-        content2: "In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website! In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website! In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!",
-        imglink: "https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png"
-    }
+    // const content = {
+    //     date: "Aug 11, 2022",
+    //     title: "Rewind Chapter",
+    //     author: "Anonymous",
+    //     description: "Ramkumar, an alumnus of College of Engineering Guindy completed his BE Computer Science and Engineering in the year .Let us rewind and take a look at his journey which started from CEG.",
+    //     content1: "In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!",
+    //     content2: "In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website! In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website! In this blog post, I'll show you how easy it is to build a CSAU Website with React. After reading this blog, you'll have a fully functional Website!",
+    //     imglink: "https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png"
+    // }
   return (
     <div className="explore-blog pt-[4.5em] font-exploreBlogText select-none">
         <div id="img-head" className='h-[43vh] flex justify-center items-center'>
@@ -57,19 +57,19 @@ const ExploreBlog = () => {
             </div>
         </div>
         <div id="right-side" className='fixed z-[1] text-black overflow-x-hidden top-[60%] right-[2%]'>
-            <a href='#'>
+            <a href='/'>
                 <FaFacebookF id="icons-right" className="mb-[10px]" size="1.3em" />
             </a>
             <br></br>
-            <a href='#'>
+            <a href='/'>
                 <AiOutlineTwitter id="icons-right" className="mb-[10px]" size="1.3em" />
             </a>
             <br></br>
-            <a href='#'>
+            <a href='/'>
                 <FaLinkedin id="icons-right" className="mb-[10px]" size="1.3em" />
             </a>
             <br></br>
-            <a href='#'>
+            <a href='/'>
                 <FaInstagram id="icons-right" className="mb-[10px]" size="1.3em" />
             </a>
             <br></br>

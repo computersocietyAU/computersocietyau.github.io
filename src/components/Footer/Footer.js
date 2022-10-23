@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-export default function Footer() {
+const Footer = () => {
+
   return (
-    <section className='w-full min-h-[100vh] pt-28 pb-32 flex justify-center items-center flex-col' id='contact'>
+      <section className='w-[100vw] pt-10 pb-3 flex justify-center items-center flex-col' id='contact'>
         <div className='contact-container flex flex-col xlg:flex-row justify-center xlg:justify-between items-center mx-auto flex-wrap pr-[15px]] xlg:pr-[60px] pl-7px w-[min(90%,1100px)]'>
           <img src='/logo.png' alt='contact-logo'
             className='block object-contain w-[200px] h-[200px] xlg:w-[250px] xlg:h-[250px] xlg:mr-[50px]'
@@ -67,4 +68,6 @@ export default function Footer() {
         </footer>
       </section>
   )
-}
+};
+
+export default Footer;

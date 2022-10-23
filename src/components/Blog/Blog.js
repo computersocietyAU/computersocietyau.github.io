@@ -1,7 +1,6 @@
 import Subheading from '../Events/Subheading/Subheading';
-import client from "../../client"
-import { useEffect, useState } from 'react';
-import { Link,Outlet,useMatch } from '@tanstack/react-location'
+import { Link, useMatch } from '@tanstack/react-location'
+import Footer from '../Footer/Footer';
 
 const Blog = () => {
     const {data} = useMatch();
@@ -102,7 +101,7 @@ const Blog = () => {
                         return (
                             <Link to={`/blog/${value.slug.current}`} key={value.slug.current}>
                                 <div className='our-blog-container bg-ourBlogBg max-w-[400px] h-[490px] my-[1em] mx-[20px] rounded-[40px]'>
-                                    <img className='h-[48%] rounded-[27px] bg-cover bg-no-repeat bg-center w-full object-cover' src={value.mainImage.asset.url}/>
+                                    <img className='h-[48%] rounded-[27px] bg-cover bg-no-repeat bg-center w-full object-cover' src={value.mainImage.asset.url} alt="csau blog" />
                                     <div id="details" className='py-[12px] px-[18px] tracking-[1px] font-blog'>
                                         <div id="date" className='mt-[17px] md:mt-0 font-bold text-[15px] md:text-base md:leading-[20px] text-navSpecial'>
                                             {value?.publishedAt.substring(0,10)}
@@ -123,6 +122,7 @@ const Blog = () => {
                     })}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
