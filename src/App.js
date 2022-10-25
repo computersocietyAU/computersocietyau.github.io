@@ -100,6 +100,8 @@ async function fetchTeam() {
     lnurl,
     designation,
     year,
+    domain,
+    department,
     image {
       asset -> {
         _id,
