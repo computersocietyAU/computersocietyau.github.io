@@ -8,27 +8,30 @@ import client from './client';
 
 const routes = [
   {
-    path: '/',
-    element: <Home/>
+    path: "/",
+    element: <Home />,
   },
   {
-    path:'/events',
-    element: <Events/>,
+    path: "/events",
+    element: <Events />,
     loader: async () => {
       const data = await fetchEvents();
-      console.log(data)
-      const upcomingEvents = data.filter(event => event.upcoming);
+      console.log(data);
+      const upcomingEvents = data.filter((event) => event.upcoming);
       const events = data
         .filter((event) => !event.upcoming || event.upcoming === null)
+        .sort((a, b) =>
+          a.date < b.date ? 1 : b.date < a.date ? -1 : 0
+        );;
       return {
         events: events,
         upcomingEvents: upcomingEvents,
       };
-    }
+    },
   },
-  {    
+  {
     path: "/blog/:blogId",
-    element: <ExploreBlog/>,
+    element: <ExploreBlog />,
     loader: async ({ params: { blogId } }) => {
       return {
         blog: await fetchBlogById(blogId),
@@ -36,7 +39,7 @@ const routes = [
     },
   },
   {
-    path: '/blogs',
+    path: "/blogs",
     element: <Blog />,
     loader: async () => {
       return {
@@ -45,15 +48,30 @@ const routes = [
     },
   },
   {
-    path:'/team',
+    path: "/team",
     element: <Team />,
     loader: async () => {
+      const data = await fetchTeam();
+      console.log(data);
+      const presidents = data.filter((team) => team.designation === "President");
+      const domainHeads = data
+        .filter((team) => team.designation === "Domain Head")
+        .sort((a, b) =>
+          a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : 0
+        );
+      const deputyHeads = data
+        .filter((team) => team.designation === "Deputy Head")
+        .sort((a, b) =>
+          a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : 0
+        );;
       return {
-        team: await fetchTeam(),
+        presidents: presidents,
+        domainHeads: domainHeads,
+        deputyHeads: deputyHeads,
       };
     },
   },
-]
+];
 
 const location = new ReactLocation();
 
