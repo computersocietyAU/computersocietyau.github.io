@@ -1,7 +1,18 @@
+import { useRouter } from '@tanstack/react-location';
 import React from 'react';
 import Footer from '../Footer/Footer';
 
 const Home = () => {
+
+  const router = useRouter()
+
+  if(router.pending){
+    return(
+      <div class="flex items-center justify-center space-x-2 animate-pulse h-screen w-screen">
+        <div class="w-40 h-40 border-t-4 border-b-4 border-green-900 rounded-full animate-spin text-navSpecial"></div>
+      </div>
+    )
+  }
 
   return (
     <main id='home' className='h-[100vh]'>

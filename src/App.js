@@ -40,12 +40,17 @@ const routes = [
   },
   {
     path: "/blogs",
-    element: <Blog />,
-    loader: async () => {
-      return {
-        blogs: await fetchBlogs(),
-      };
-    },
+    element:(
+      <div className="flex flex-col items-center justify-center h-screen w-screen">
+        <h1 className="font-semibold text-5xl text-navSpecial">Stay tuned for more updates !</h1>
+      </div>
+    )
+    // element: <Blog />,
+    // loader: async () => {
+    //   return {
+    //     blogs: await fetchBlogs(),
+    //   };
+    // },
   },
   {
     path: "/team",

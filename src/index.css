@@ -25,6 +25,10 @@ body {
   background: url("../public/entire-bg.png");
 }
 
+.comingsoon {
+  background: url("../public/cs.svg")
+}
+
 .section-bg {
   background: url('../public/section-img.png');
   background-repeat: no-repeat;

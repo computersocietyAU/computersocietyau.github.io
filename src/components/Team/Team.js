@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useMatch } from "@tanstack/react-location";
+import { useMatch, useRouter } from "@tanstack/react-location";
 import Footer from "../Footer/Footer";
 import Head from "./Head";
 
@@ -12,6 +12,15 @@ const Team = () => {
 
   const { data } = useMatch();
   console.log(data);
+  const router = useRouter()
+
+  if(router.pending){
+    return(
+      <div class="flex items-center justify-center space-x-2 animate-pulse h-screen w-screen">
+        <div class="w-40 h-40 border-t-4 border-b-4 border-green-900 rounded-full animate-spin text-navSpecial"></div>
+      </div>
+    )
+  }
   
   // const settings = {
   //   infinite: true,
