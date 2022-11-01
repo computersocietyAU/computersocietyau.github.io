@@ -21,7 +21,7 @@ module.exports = {
       black: '#000000',
       blogText: '#47515E',
       cardBg: '#19244499',
-      imgBorder: '#41e6a699'
+      imgBorder: '#41e6a699',
     },
     fontFamily: {
       'navLogo': ["'Goldman'", 'cursive'],

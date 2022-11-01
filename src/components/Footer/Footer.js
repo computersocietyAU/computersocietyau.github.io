@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-location';
 import React from 'react';
 
 const Footer = () => {
@@ -11,38 +12,38 @@ const Footer = () => {
           <div className='flex flex-wrap flex-col-reverse xlg:flex-row justify-center xlg:justify-between items-center flex-1 xlg:flex-[0.9] lg:flex-[0.8] mt-[-30px] xlg:mt-0'>
             <form id='contact-form' className='flex flex-col align-center justify-around my-[20px] xlg:my-0'>
               <input type="text" placeholder="Email Address" autoComplete='off' required 
-                className='bg-formInput py-4 px-2.5 h-9 w-[300px] font-linksText text-inputColor text-sm outline-none border-none rounded-md'
+                className='bg-navbarBg py-4 px-2.5 h-9 w-[300px] font-linksText text-inputColor text-sm outline-none border-none rounded-md'
               />
               <textarea placeholder='Get in touch with us' cols="20" rows="5" autoComplete='off' required
-                className='bg-inputBg w-[300px] h-[85px] font-linksText text-inputColor text-sm outline-none border-none rounded-md my-[10px] p-[10px] resize-none'
+                className='bg-navbarBg w-[300px] h-[85px] font-linksText text-inputColor text-sm outline-none border-none rounded-md my-[10px] p-[10px] resize-none'
               >
               </textarea>
               <button type='submit'
-                className='bg-buttonBg w-[300px] font-linksText text-inputColor text-sm outline-none rounded-md p-[10px] tracking-[1px] cursor-pointer border-[1px] border-inputBorder border-solid'
+                className='bg-navSpecial w-[300px] font-linksText text-black text-sm outline-none rounded-md p-[10px] tracking-[1px] cursor-pointer border-[1px] border-inputBorder border-solid'
               >
                 SEND MESSAGE
               </button>
             </form>
-            <ul className='list-none'>
+            <ul className='list-none text-navSpecial'>
               <li>
-                <a href='/' className='text-navSpecial xlg:text-white block my-[15px] opacity-[0.85] tracking-[1px] no-underline font-linksText'>
-                Home
-                </a>
+                <Link to='/' className='block my-[15px] opacity-[0.85] tracking-[1px]'>
+                <span className='cursor-pointer hover:text-gray-300 text-white'>Home</span>
+                </Link>
               </li>
               <li>
-                <a href='/events' className='text-navSpecial xlg:text-white block my-[15px] opacity-[0.85] tracking-[1px] no-underline font-linksText'>
-                  Events
-                </a>
+                <Link to='/events' className='block my-[15px] opacity-[0.85] tracking-[1px]'>
+                <span className='cursor-pointer hover:text-gray-300 text-white'>Events</span>
+                </Link>
               </li>
               <li>
-                <a href='/blogs' className='text-navSpecial xlg:text-white block my-[15px] opacity-[0.85] tracking-[1px] no-underline font-linksText'>
-                  Blogs
-                </a>
+                <Link to='/blogs' className='block my-[15px] opacity-[0.85] tracking-[1px]'>
+                <span className='cursor-pointer hover:text-gray-300 text-white'>Blogs</span>
+                </Link>
               </li>
               <li>
-                <a href='/team' className='text-navSpecial xlg:text-white block my-[15px] opacity-[0.85] tracking-[1px] no-underline font-linksText'>
-                  Team
-                </a>
+                <Link to='/team' className='block my-[15px] opacity-[0.85] tracking-[1px]'>
+                <span className='cursor-pointer hover:text-gray-300 text-white'>Team</span>
+                </Link>
               </li>
             </ul>
           </div>
