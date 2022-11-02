@@ -11,9 +11,9 @@ export default function President({president}) {
           className="block w-[125px] h-[125px] rounded-[50%] object-contain"
         />
         <div className="text-center">
-          <p className="my-2 tracking-[1px]">{president.name}</p>
-          <p className="my-2 tracking-[1px]">{`${president.year} year, ${president.department} dept`}</p>
-          <a href={president.lnurl} className="mx-2">
+          <p className="my-2 tracking-[0.3px] md:tracking-[1px]">{president.name}</p>
+          <p className="my-2 tracking-[0.3px] md:tracking-[1px]">{`${president.year} year, ${president.department} dept`}</p>
+          <a href={president.lnurl} target="_blank" className="mx-2">
             <FaLinkedin className="inline" size="1.1em" />
           </a>
         </div>
