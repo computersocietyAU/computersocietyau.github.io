@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaLinkedin } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
 
 const Head = ({ head }) => {
   console.log(head)
