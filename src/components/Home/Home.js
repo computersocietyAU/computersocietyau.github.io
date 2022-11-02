@@ -35,7 +35,7 @@ const Home = () => {
       </section>
       <section className="w-[100vw] pt-20 pb-16" id="about1">
         <div className="content w-screen my-0 mx-auto px-10">
-          <h1 className="py-2.5 text-navSpecial text-center text-2xl leading-[25px] md:text-3xl lg:text-[40px] lg:leading-[50px]">
+          <h1 className="py-2.5 mb-10 text-navSpecial text-center text-2xl leading-[25px] md:text-3xl lg:text-[40px] lg:leading-[50px]">
             Who we are ?
           </h1>
           <div className="about-container-one flex items-center justify-evenly flex-wrap gap-[20px] py-[15px]">
@@ -67,7 +67,7 @@ const Home = () => {
       </section>
       <section className="w-[100vw] py-10" id="about2">
         <div className="content w-screen my-0 mx-auto px-10">
-          <h1 className="py-2.5 text-navSpecial text-center text-2xl leading-[25px] md:text-3xl lg:text-[40px] lg:leading-[50px]">
+          <h1 className="py-2.5 mb-10 text-navSpecial text-center text-2xl leading-[25px] md:text-3xl lg:text-[40px] lg:leading-[50px]">
             What we do ?
           </h1>
           <div className="about-container-two flex items-center justify-evenly flex-wrap gap-[20px] py-[15px] flex-row-reverse">
@@ -78,26 +78,11 @@ const Home = () => {
             />
             <span className="text-justify font-light tracking-[1px] opacity-75 max-w-md md:max-w-xl lg:max-w-2xl text-[13px] sm:text-[15px] md:text-[18px] lg:text-[20px]">
               <p>
-                The Computer Society of Anna University, being one of the very
-                first technical clubs to be established in the college, strives
-                to bring together students from across departments together to
-                communally grow one another’s technical prowess in various
-                domains pertaining to ever-evolving computer technology. The
-                club regularly meets up to conduct workshops on multiple and
-                engages its audience through technical articles, posts, and
-                technical trivia on social media platforms. CSAU also prides
-                itself in having conducted bootcamps on skills that make
-                students industry-ready such as “Data Hack” for Artificial
-                Intelligence (AI), Web Dev Bootcamp etc. The club’s purpose is
-                to build a community wherein students can work with like-minded
-                peers to learn new things. “100 Days of Code” was one such
-                series that the club conducted where competitive coding
-                aspirants followed up each other’s work for a duration of 100
-                days – thus creating a conducive learning space. The club aims
-                to continuously upgrade itself with more engaging content and
-                events that benefit the student community. CSAU thus aims to
-                continue nurturing a growing community of tech enthusiasts
-                within the college.
+              The Computer Society of Anna University strives to bring together students from across departments together to communally support each other’s growth in various technical domains. 
+              The club regularly meets up to conduct workshops on multiple and engages its audience through technical articles, posts, and technical trivia on social media platforms. 
+              CSAU also prides itself in having conducted bootcamps on skills that make students industry-ready such as “Data Hack” for Artificial Intelligence (AI), Web Dev Bootcamp etc. 
+              The “100 Days of Code” was one such series where competitive coding aspirants followed up on each other’s work for a duration of 100 days – thus creating a conducive learning space. 
+              The club aims to repeatedly upgrade itself with more engaging content and events that benefit the student community. CSAU thus hopes to continue nurturing a growing community of tech enthusiasts within the college.
               </p>
             </span>
           </div>

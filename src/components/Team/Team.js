@@ -42,37 +42,37 @@ const Team = () => {
   //     }
   //   ]
   // };
-  const settings2 = {
-    className: "center slider",
-    centerMode: true,
-    infinite: true,
-    autoplay: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    rows: 2,
-    slidesPerRow: 1,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-  };
-  const settings3 = {
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 3000,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 880,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  };
+  // const settings2 = {
+  //   className: "center slider",
+  //   centerMode: true,
+  //   infinite: true,
+  //   autoplay: true,
+  //   centerPadding: "60px",
+  //   slidesToShow: 3,
+  //   rows: 2,
+  //   slidesPerRow: 1,
+  //   speed: 2000,
+  //   autoplaySpeed: 2000,
+  //   cssEase: "linear",
+  // };
+  // const settings3 = {
+  //   infinite: true,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   speed: 3000,
+  //   autoplaySpeed: 3000,
+  //   pauseOnHover: true,
+  //   responsive: [
+  //     {
+  //       breakpoint: 880,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       }
+  //     }
+  //   ]
+  // };
 
   return (
     <>
@@ -102,22 +102,10 @@ const Team = () => {
             Deputy Heads
           </p>
         </div>
-        <div
-          className="hidden xl:block w-[min(90%,1200px)] m-auto py-5"
-          id="slider2"
-        >
-          <Slider {...settings2}>
-            {data?.deputyHeads?.map((deputyHead) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
+          {data?.deputyHeads?.map((deputyHead) => {
               return <DeputyHead dhead={deputyHead} />;
-            })}
-          </Slider>
-        </div>
-        <div className="block xl:hidden w-[min(90%,1200px)] m-auto py-5">
-          <Slider {...settings3}>
-            {data?.deputyHeads?.map((deputyHead) => {
-              return <DeputyHead dhead={deputyHead} />;
-            })}
-          </Slider>
+          })}
         </div>
       </div>
       <Footer />

@@ -9,7 +9,7 @@ function EventCards({ coverImage, title, description, date, location, background
     }
 
     return (
-        <div className='w-screen xlg:w-[90vw] h-fit py-[2rem] xlg:py-0 pb-[4rem]  mx-auto mt-[2rem] mb-[3rem] flex-col xlg:flex-row items-center xlg:items-start justify-evenly xlg:justify-start rounded-2xl flex xlg:h-[50vh] relative ' style={{ background: background }}>
+        <div className='w-screen xlg:w-[90vw] h-fit py-[2rem] xlg:py-0 pb-[4rem]  mx-auto mt-[2rem] mb-[3rem] flex-col xlg:flex-row items-center xlg:items-start justify-evenly xlg:justify-start rounded-2xl flex xlg:h-[50vh] relative transition ease-in-out hover:cursor-pointer hover:opacity-90 hover:scale-95 duration-200' style={{ background: background }}>
             <div className='max-w-72 max-h-max m-auto flex xlg:justify-center xlg:items-center xlg:px-[2rem]'>
                 <img src={coverImage} alt="cover" className='w-48 md:w-72' />
             </div>
