@@ -21,7 +21,7 @@ function EventCards({ coverImage, title, description, date, location, background
                         <div className='xlg:text-lg text-sm flex items-center xlg:gap-4 gap-2 text-start m-2.5 uppercase'><PlaceIcon height={30} width={30} /><p>{location}</p></div>
                     </div>
                 </div>
-                <button className='static xlg:absolute bottom-[2rem] w-[150px] text-[14px] xlg:text-[16px]   xlg:w-fit right-[1rem] mt-[1rem] xlg:mt-0 mr-0 xlg:mr-[3rem] uppercase bg-[#D9D9D9] text-[#192444] rounded-xl py-[10px] px-[15px] hover:bg-[#41e6a7b7] hover:text-[#d9d9d9] '>{buttonText}</button>
+                {buttonText?<button className='static xlg:absolute bottom-[2rem] w-[150px] text-[14px] xlg:text-[16px]   xlg:w-fit right-[1rem] mt-[1rem] xlg:mt-0 mr-0 xlg:mr-[3rem] uppercase bg-[#D9D9D9] text-[#192444] rounded-xl py-[10px] px-[15px] hover:bg-[#41e6a7b7] hover:text-[#d9d9d9] '>{buttonText}</button>:null}
 
             </div>
 

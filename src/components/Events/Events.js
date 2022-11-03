@@ -77,7 +77,7 @@ function Events() {
                 description={description[0].children[0].text} // change to block content in sanity
                 date={changeDateFormat(date)}
                 location={location}
-                buttonText="See pictures ->"
+                // buttonText="See pictures ->"
                 background={"rgba(65, 230, 166, 0.3)"}
               />
             )

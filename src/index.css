@@ -116,9 +116,6 @@ body {
 .glassIco, .glassIco * {
   transition: 200ms;
 }
-.glassIco > * {
-  opacity: 0.8;
-}
 
 #slider2 .slick-slide {
   width: 330px !important;
