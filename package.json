@@ -1,7 +1,6 @@
 {
   "name": "csau-web-22",
   "version": "0.1.0",
-  "homepage": "https://harishankar0301.github.io/csau-test",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
