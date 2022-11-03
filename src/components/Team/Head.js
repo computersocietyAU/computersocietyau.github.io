@@ -9,7 +9,7 @@ const Head = ({ head }) => {
         <div className="mt-2 text-center">
             <p className="my-1 tracking-[1px]">{head.name}</p>
             <p className="my-1 tracking-[1px]">{`${head.year} year, ${head.department} dept`}</p>
-            <a href={head.lnurl} target="_blank" className="mx-2">
+            <a href={head.lnurl} target="_blank" rel="noreferrer" className="mx-2">
             <FaLinkedin className="inline" size="1.1em" />
             </a>
         </div>

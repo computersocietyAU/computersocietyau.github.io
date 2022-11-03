@@ -4,7 +4,7 @@ import React from 'react';
 const DeputyHead = ({ dhead }) => {
     return (
         <div className="px-5 my-5 transition ease-in-out hover:scale-110 duration-200">
-            <a href={dhead.lnurl} target="_blank">
+            <a href={dhead.lnurl} target="_blank" rel="noreferrer">
                 <div className="glassIco mx-auto py-4 px-5 flex flex-col justify-start items-center relative">
                     <img src={dhead.image?.asset?.url} alt="head" className="w-[75px] h-[75px] rounded-[50%] object-contain border-solid border-2 border-imgBorder" />
                     <div className="mt-2 mb-5 text-center">

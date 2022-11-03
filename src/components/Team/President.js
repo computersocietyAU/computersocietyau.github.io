@@ -13,7 +13,7 @@ export default function President({president}) {
         <div className="text-center">
           <p className="my-2 tracking-[0.3px] md:tracking-[1px]">{president.name}</p>
           <p className="my-2 tracking-[0.3px] md:tracking-[1px]">{`${president.year} year, ${president.department} dept`}</p>
-          <a href={president.lnurl} target="_blank" className="mx-2">
+          <a href={president.lnurl} target="_blank" rel="noreferrer" className="mx-2">
             <FaLinkedin className="inline" size="1.1em" />
           </a>
         </div>
