@@ -95,26 +95,26 @@ const App = () => {
 
 export default App;
 
-async function fetchBlogs(){
-  const data = await client
-  .fetch(
-    `*[_type == "blog"] {
-    title,
-    slug,
-    author,
-    summary,
-    publishedAt,
-    mainImage {
-      asset -> {
-        _id,
-        url
-      },
-      alt
-    }
-  }`
-  );
-  return data;
-}
+// async function fetchBlogs(){
+//   const data = await client
+//   .fetch(
+//     `*[_type == "blog"] {
+//     title,
+//     slug,
+//     author,
+//     summary,
+//     publishedAt,
+//     mainImage {
+//       asset -> {
+//         _id,
+//         url
+//       },
+//       alt
+//     }
+//   }`
+//   );
+//   return data;
+// }
 
 async function fetchTeam() {
   const data = await client.fetch(
@@ -137,25 +137,25 @@ async function fetchTeam() {
   return data;
 }
 
-async function fetchBlogById(blogId) {
-  const data = await client.fetch(
-    `*[slug.current == "${blogId}"] {
-      title,
-      body,
-      author,
-      summary,
-      publishedAt,
-      mainImage {
-        asset -> {
-          _id,
-          url
-        },
-        alt
-      }
-    }`
-  );
-  return data[0];
-}
+// async function fetchBlogById(blogId) {
+//   const data = await client.fetch(
+//     `*[slug.current == "${blogId}"] {
+//       title,
+//       body,
+//       author,
+//       summary,
+//       publishedAt,
+//       mainImage {
+//         asset -> {
+//           _id,
+//           url
+//         },
+//         alt
+//       }
+//     }`
+//   );
+//   return data[0];
+// }
 
 async function fetchEvents() {
   const data = client.fetch(
