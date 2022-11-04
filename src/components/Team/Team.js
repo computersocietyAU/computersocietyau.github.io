@@ -11,7 +11,6 @@ import President from "./President";
 const Team = () => {
 
   const { data } = useMatch();
-  console.log(data);
   const router = useRouter()
 
   if(router.pending){

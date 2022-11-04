@@ -16,7 +16,6 @@ const routes = [
     element: <Events />,
     loader: async () => {
       const data = await fetchEvents();
-      console.log(data);
       const upcomingEvents = data.filter((event) => event.upcoming);
       const events = data
         .filter((event) => !event.upcoming || event.upcoming === null)
@@ -57,7 +56,6 @@ const routes = [
     element: <Team />,
     loader: async () => {
       const data = await fetchTeam();
-      console.log(data);
       const presidents = data.filter((team) => team.designation === "President");
       const domainHeads = data
         .filter((team) => team.designation === "Domain Head")

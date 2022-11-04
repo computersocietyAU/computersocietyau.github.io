@@ -11,8 +11,6 @@ const ExploreBlog = () => {
 
     const d = new Date(blog.publishedAt);
     const publishedDate = `${months[d.getMonth()]} ${d.getDay()}, ${d.getFullYear()}`;
-
-    console.log(blog)
  
     // const content = {
     //     date: "Aug 11, 2022",
