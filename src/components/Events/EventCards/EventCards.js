@@ -17,7 +17,7 @@ function EventCards({ coverImage, title, description, date, location, background
                 <div className='font-bold xlg:text-3xl text-xl my-4 text-center uppercase'>{title}</div>
                 <div className='font-medium text-[14px] xlg:text-[17px] leading-7 xlg:pr-8 xlg:pl-0 p-x-[0.5rem] text-justify'>
                     <p className="pb-5">{truncate(description,600)}</p>
-                    <div className='flex xlg:border-0 xlg:block justify-between border-y-[1px] border-y-[#41e6a680] py-3'>
+                    <div className='flex xlg:border-0 xlg:block justify-between border-y-[1px] border-y-[#41e6a680] py-2 my-2'>
                         <div className='xlg:text-lg text-sm flex items-center xlg:gap-4 gap-2 text-start m-2.5 uppercase'><CalenderIcon height={30} width={30} /><p>{date}</p></div>
                         <div className='xlg:text-lg text-sm flex items-center xlg:gap-4 gap-2 text-start m-2.5 uppercase'><PlaceIcon height={30} width={30} /><p>{location}</p></div>
                     </div>

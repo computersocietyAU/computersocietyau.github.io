@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <main id="home" className="h-[100vh]">
       <section
-        className="w-[100vw] h-[102vh] flex justify-center items-center relative"
+        className="w-[100vw] overflow-hidden h-[102vh] flex justify-center items-center relative"
         id="landing"
       >
         <figure className="font-landingText block relative">
