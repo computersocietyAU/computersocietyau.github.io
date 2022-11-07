@@ -1,8 +1,21 @@
 import { Link } from '@tanstack/react-location';
-import React from 'react';
+import React,{useState} from 'react';
 
 const Footer = () => {
 
+  const [body,setBody] = useState('')
+  const email = "cegcsau@gmail.com"
+
+  function sendMessage(e){
+    e.preventDefault();
+    if(body.length>0){
+      let mailLink = 'mailto:'+email+'?subject=Message to CSAU'+'&body='+body
+      window.location.href = mailLink
+    }
+    else{
+      alert("Please enter a message")
+    }
+  }
   return (
     <section
       className="w-[100vw] pt-10 pb-3 flex justify-center items-center flex-col"
@@ -19,23 +32,25 @@ const Footer = () => {
             id="contact-form"
             className="flex flex-col align-center justify-around my-[20px] xlg:my-0"
           >
-            <input
+            {/* <input
               type="text"
               placeholder="Email Address"
               autoComplete="off"
               required
               className="bg-navbarBg py-4 px-2.5 h-9 w-[300px] font-linksText text-inputColor text-sm outline-none border-none rounded-md"
-            />
+            /> */}
             <textarea
               placeholder="Get in touch with us"
               cols="20"
               rows="5"
               autoComplete="off"
+              value={body}
+              onChange={(e)=>setBody(e.target.value)}
               required
-              className="bg-navbarBg w-[300px] h-[85px] font-linksText text-inputColor text-sm outline-none border-none rounded-md my-[10px] p-[10px] resize-none"
+              className="bg-navbarBg w-[300px] my-5 font-linksText text-inputColor text-sm outline-none border-none rounded-md p-[10px] resize-none"
             ></textarea>
             <button
-              type="submit"
+              onClick={(e)=>sendMessage(e)}
               className="bg-navSpecial w-[300px] font-linksText text-black text-sm outline-none rounded-md p-[10px] tracking-[1px] cursor-pointer border-[1px] border-inputBorder border-solid"
             >
               SEND MESSAGE
