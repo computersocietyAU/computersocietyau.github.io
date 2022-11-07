@@ -40,7 +40,7 @@ const Home = () => {
           </h1>
           <div className="about-container-one flex items-center justify-evenly flex-wrap gap-[20px] py-[15px]">
             <img
-              src="/about1.png"
+              src="/about1.jpeg"
               alt="about1"
               className="block w-[min(90%,400px)] xlg:w-[min(90%,550px)] h-[230px] md:h-[300px] lg:h-[350px] object-cover"
             />
@@ -72,7 +72,7 @@ const Home = () => {
           </h1>
           <div className="about-container-two flex items-center justify-evenly flex-wrap gap-[20px] py-[15px] flex-row-reverse">
             <img
-              src="/about2.png"
+              src="/about2.jpeg"
               alt="about2"
               className="block w-[min(90%,400px)] xlg:w-[min(90%,550px)] h-[230px] md:h-[300px] lg:h-[350px] object-cover"
             />
