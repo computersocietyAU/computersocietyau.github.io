@@ -8,7 +8,7 @@ export default function President({president}) {
         <img
           src={president.image?.asset?.url}
           alt="president-img"
-          className="block w-[125px] h-[125px] rounded-[50%] object-contain"
+          className="block w-[125px] h-[125px] rounded-[50%] object-cover shadow-xl"
         />
         <div className="text-center">
           <p className="my-2 tracking-[0.3px] md:tracking-[1px]">{president.name}</p>
