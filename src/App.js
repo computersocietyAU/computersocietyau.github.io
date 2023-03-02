@@ -4,7 +4,9 @@ import Team  from './components/Team/Team';
 import { Router, Outlet, ReactLocation } from '@tanstack/react-location';
 // import Blog from './components/Blog/Blog';
 // import ExploreBlog from './components/Blog/ExploreBlog';
+import MediumBlog from './components/Blog/MediumBlog';
 import client from './client';
+import axios from 'axios';
 
 const routes = [
   {
@@ -39,17 +41,17 @@ const routes = [
   // },
   {
     path: "/blogs",
-    element:(
-      <div className="flex flex-col items-center justify-center h-screen w-screen">
-        <h1 className="font-semibold text-xl md:text-5xl text-navSpecial">Stay tuned for more updates !</h1>
-      </div>
-    )
-    // element: <Blog />,
-    // loader: async () => {
-    //   return {
-    //     blogs: await fetchBlogs(),
-    //   };
-    // },
+    // element:(
+    //   <div className="flex flex-col items-center justify-center h-screen w-screen">
+    //     <h1 className="font-semibold text-xl md:text-5xl text-navSpecial">Stay tuned for more updates !</h1>
+    //   </div>
+    // )
+    element: <MediumBlog />,
+    loader: async () => {
+      return {
+        blogs: await getMediumBlogData(),
+      };
+    },
   },
   {
     path: "/team",
@@ -154,6 +156,11 @@ async function fetchTeam() {
 //   );
 //   return data[0];
 // }
+async function getMediumBlogData(){
+  const resp = await axios.get("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40gopalvadith",{method: 'GET'})
+  const blogs = (resp.data.items)
+  return blogs
+}
 
 async function fetchEvents() {
   const data = client.fetch(

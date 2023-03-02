@@ -11,6 +11,7 @@ function Events() {
   
 
   const { data } = useMatch();
+  console.log(data)
       
   const router = useRouter()
 
@@ -35,7 +36,10 @@ function Events() {
 
     return (
       <div className="events-page">
+                {data?.upcomingEvents?.length!=0?
         <div className="section-bg pt-[14vh] h-fit w-full ">
+          
+
           <Subheading title="Upcoming Events" />
 
           <Swiper
@@ -64,7 +68,7 @@ function Events() {
               )
             )}
           </Swiper>
-        </div>
+        </div>:<div className='pb-[4rem]'></div>}
         <div className="pt-[3rem]">
           <Subheading title="Our Events" />
 
