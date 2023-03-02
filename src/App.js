@@ -157,7 +157,7 @@ async function fetchTeam() {
 //   return data[0];
 // }
 async function getMediumBlogData(){
-  const resp = await axios.get("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40gopalvadith",{method: 'GET'})
+  const resp = await axios.get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cegcsau",{method: 'GET'})
   const blogs = (resp.data.items)
   return blogs
 }

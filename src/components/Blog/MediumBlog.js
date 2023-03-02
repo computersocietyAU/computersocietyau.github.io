@@ -51,6 +51,14 @@ function MediumBlog() {
       )
     }
 
+    if(data.blogs.length===0){
+      return(
+        <div className="flex flex-col items-center justify-center h-screen w-screen">
+        <h1 className="font-semibold text-xl md:text-5xl text-navSpecial">No blogs present! Stay tuned for more updates</h1>
+       </div>
+      )
+    }
+
   return (
     <div className="pt-[7em] px-7">
          <div className="text-white font-main font-bold text-[20px] mb-[2em] xlg:text-[30px] text-center uppercase flex justify-center">
@@ -61,7 +69,7 @@ function MediumBlog() {
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mx-8 gap-y-3 gap-x-8 h-full">
           {/* <MediumBlogCard/> */}
           {/* {blogs?.map()} */}
-          {data.blogs.length===0?<><h1>No blogs present</h1></>:
+          {
           data.blogs.map(blog=>(
           <a href={blog.link} target="_blank" rel="noreferrer noopener">
             <MediumBlogCard imageURL={blog.thumbnail} title={blog.title} link={blog.link} body={blog.content}/>
