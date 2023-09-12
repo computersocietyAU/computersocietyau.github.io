@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Subheading from './Subheading/Subheading';
 import EventCards from './EventCards/EventCards';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -6,9 +6,23 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useMatch, useRouter } from '@tanstack/react-location';
 import 'swiper/css/bundle';
 import Footer from '../Footer/Footer';
+import 'viewerjs/dist/viewer.css';
+import Viewer from 'viewerjs';
 
 function Events() {
-  
+  //For sliding posters
+  let galleryViewer = null;
+
+    useEffect(()=> {
+        if (!galleryViewer) {
+            galleryViewer = new Viewer(
+                document.getElementById('gallery_image_container'),
+                {
+                    title: [4, (coverImage, coverImageData) => `${coverImage.alt}`]
+                }
+            );
+        }
+    },[])
 
   const { data } = useMatch();
   console.log(data)
@@ -51,6 +65,7 @@ function Events() {
             onSwiper={() => {}}
             onSlideChange={() => {}}
           >
+            <div id = 'gallery_image_container'>
             {data?.upcomingEvents?.map(
               ({ title, mainImage, description, date, location }, index) => (
                 <SwiperSlide key={index}>
@@ -63,15 +78,17 @@ function Events() {
                     location={location}
                     buttonText="Register Now !"
                     background={"rgba(25, 36, 68, 0.6)"}
+                    //onClick={() => handleViewerClick(index)}
                   />
                 </SwiperSlide>
               )
             )}
+            </div>
           </Swiper>
         </div>:<div className='pb-[4rem]'></div>}
         <div className="pt-[3rem]">
           <Subheading title="Our Events" />
-
+              <div id = 'gallery_image_container'>
           {data?.events?.map(
             ({ title, mainImage, description, date, location }, index) => (
               <EventCards
@@ -83,9 +100,11 @@ function Events() {
                 location={location}
                 // buttonText="See pictures ->"
                 background={"rgba(65, 230, 166, 0.3)"}
+               // onClick={() => handleViewerClick(index)}
               />
             )
           )}
+          </div>
         </div>
         <Footer/>
       </div>
