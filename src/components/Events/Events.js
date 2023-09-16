@@ -1,25 +1,34 @@
-import React from 'react'
-import Subheading from './Subheading/Subheading';
-import EventCards from './EventCards/EventCards';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useMatch, useRouter } from '@tanstack/react-location';
-import 'swiper/css/bundle';
-import Footer from '../Footer/Footer';
+import React from "react";
+import Subheading from "./Subheading/Subheading";
+import Yearheading from "./YearHeading/YearHeading";
+import EventCards from "./EventCards/EventCards";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useMatch, useRouter } from "@tanstack/react-location";
+import "swiper/css/bundle";
+import Footer from "../Footer/Footer";
 
 function Events() {
-
-
   const { data } = useMatch();
 
-  const router = useRouter()
+  const year_wise_data = data?.events?.reduce((acc, item) => {
+    let d = new Date(item.date);
+    let fullYear = d.getFullYear();
+    if (!acc[fullYear]) {
+      acc[fullYear] = [];
+    }
+    acc[fullYear].push(item);
+    return acc;
+  }, {});
+  const sortedYears = Object.keys(year_wise_data).sort().reverse();
+  const router = useRouter();
 
   if (router.pending) {
     return (
       <div class="flex items-center justify-center space-x-2 animate-pulse h-screen w-screen">
         <div class="w-40 h-40 border-t-4 border-b-4 border-green-900 rounded-full animate-spin text-navSpecial"></div>
       </div>
-    )
+    );
   }
 
   const changeDateFormat = (date) => {
@@ -31,14 +40,12 @@ function Events() {
     let day = dateArray[2];
     convertedDate = day + "-" + month + "-" + year;
     return convertedDate;
-  }
+  };
 
   return (
     <div className="events-page">
-      {data?.upcomingEvents?.length !== 0 ?
+      {data?.upcomingEvents?.length !== 0 ? (
         <div className="section-bg pt-[14vh] h-fit w-full ">
-
-
           <Subheading title="Upcoming Events" />
 
           <Swiper
@@ -47,8 +54,8 @@ function Events() {
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            onSwiper={() => { }}
-            onSlideChange={() => { }}
+            onSwiper={() => {}}
+            onSlideChange={() => {}}
           >
             {data?.upcomingEvents?.map(
               ({ title, mainImage, description, date, location }, index) => (
@@ -67,28 +74,37 @@ function Events() {
               )
             )}
           </Swiper>
-        </div> : <div className='pb-[4rem]'></div>}
+        </div>
+      ) : (
+        <div className="pb-[4rem]"></div>
+      )}
       <div className="pt-[3rem]">
         <Subheading title="Our Events" />
-
-        {data?.events?.map(
-          ({ title, mainImage, description, date, location }, index) => (
-            <EventCards
-              key={index}
-              title={title}
-              coverImage={mainImage.asset.url}
-              description={description[0].children[0].text} // change to block content in sanity
-              date={changeDateFormat(date)}
-              location={location}
-              // buttonText="See pictures ->"
-              background={"rgba(65, 230, 166, 0.3)"}
-            />
-          )
-        )}
+        {sortedYears?.map((year) => (
+          <div>
+            <Yearheading title={year} />
+            <div>
+              {year_wise_data[year]?.map(
+                ({ title, mainImage, description, date, location }, index) => (
+                  <EventCards
+                    key={index}
+                    title={title}
+                    coverImage={mainImage.asset.url}
+                    description={description[0].children[0].text} // change to block content in sanity
+                    date={changeDateFormat(date)}
+                    location={location}
+                    // buttonText="See pictures ->"
+                    background={"rgba(65, 230, 166, 0.3)"}
+                  />
+                )
+              )}
+            </div>
+          </div>
+        ))}
       </div>
       <Footer />
     </div>
   );
 }
 
-export default Events
+export default Events;
