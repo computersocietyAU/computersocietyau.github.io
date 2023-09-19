@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Subheading from "./Subheading/Subheading";
 import Yearheading from "./YearHeading/YearHeading";
 import EventCards from "./EventCards/EventCards";
@@ -7,10 +7,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useMatch, useRouter } from "@tanstack/react-location";
 import "swiper/css/bundle";
 import Footer from "../Footer/Footer";
+import "viewerjs/dist/viewer.css";
+import Viewer from "viewerjs";
 
 function Events() {
-  const { data } = useMatch();
+  //For sliding posters
+  let galleryViewer = null;
 
+  useEffect(() => {
+    if (!galleryViewer) {
+      galleryViewer = new Viewer(
+        document.getElementById("gallery_image_container"),
+        {
+          title: [4, (coverImage, coverImageData) => `${coverImage.alt}`],
+        }
+      );
+    }
+  }, []);
+
+  const { data } = useMatch();
   const year_wise_data = data?.events?.reduce((acc, item) => {
     let d = new Date(item.date);
     let fullYear = d.getFullYear();
@@ -21,6 +36,8 @@ function Events() {
     return acc;
   }, {});
   const sortedYears = Object.keys(year_wise_data).sort().reverse();
+  console.log(data);
+
   const router = useRouter();
 
   if (router.pending) {
@@ -44,7 +61,7 @@ function Events() {
 
   return (
     <div className="events-page">
-      {data?.upcomingEvents?.length !== 0 ? (
+      {data?.upcomingEvents?.length != 0 ? (
         <div className="section-bg pt-[14vh] h-fit w-full ">
           <Subheading title="Upcoming Events" />
 
@@ -57,22 +74,25 @@ function Events() {
             onSwiper={() => {}}
             onSlideChange={() => {}}
           >
-            {data?.upcomingEvents?.map(
-              ({ title, mainImage, description, date, location }, index) => (
-                <SwiperSlide key={index}>
-                  <EventCards
-                    key={index}
-                    title={title}
-                    coverImage={mainImage.asset.url}
-                    description={description[0].children[0].text} // change to block content in sanity
-                    date={changeDateFormat(date)}
-                    location={location}
-                    buttonText="Register Now !"
-                    background={"rgba(25, 36, 68, 0.6)"}
-                  />
-                </SwiperSlide>
-              )
-            )}
+            <div id="gallery_image_container">
+              {data?.upcomingEvents?.map(
+                ({ title, mainImage, description, date, location }, index) => (
+                  <SwiperSlide key={index}>
+                    <EventCards
+                      key={index}
+                      title={title}
+                      coverImage={mainImage.asset.url}
+                      description={description[0].children[0].text} // change to block content in sanity
+                      date={changeDateFormat(date)}
+                      location={location}
+                      buttonText="Register Now !"
+                      background={"rgba(25, 36, 68, 0.6)"}
+                      //onClick={() => handleViewerClick(index)}
+                    />
+                  </SwiperSlide>
+                )
+              )}
+            </div>
           </Swiper>
         </div>
       ) : (
@@ -83,7 +103,7 @@ function Events() {
         {sortedYears?.map((year) => (
           <div>
             <Yearheading title={year} />
-            <div>
+            <div id="gallery_image_container">
               {year_wise_data[year]?.map(
                 ({ title, mainImage, description, date, location }, index) => (
                   <EventCards
@@ -95,6 +115,7 @@ function Events() {
                     location={location}
                     // buttonText="See pictures ->"
                     background={"rgba(65, 230, 166, 0.3)"}
+                    // onClick={() => handleViewerClick(index)}
                   />
                 )
               )}
