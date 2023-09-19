@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Subheading from "./Subheading/Subheading";
 import Yearheading from "./YearHeading/YearHeading";
 import EventCards from "./EventCards/EventCards";
@@ -11,20 +11,6 @@ import "viewerjs/dist/viewer.css";
 import Viewer from "viewerjs";
 
 function Events() {
-  //For sliding posters
-  let galleryViewer = null;
-
-  useEffect(() => {
-    if (!galleryViewer) {
-      galleryViewer = new Viewer(
-        document.getElementById("gallery_image_container"),
-        {
-          title: [4, (coverImage, coverImageData) => `${coverImage.alt}`],
-        }
-      );
-    }
-  }, []);
-
   const { data } = useMatch();
   const year_wise_data = data?.events?.reduce((acc, item) => {
     let d = new Date(item.date);
@@ -100,28 +86,49 @@ function Events() {
       )}
       <div className="pt-[3rem]">
         <Subheading title="Our Events" />
-        {sortedYears?.map((year) => (
-          <div>
-            <Yearheading title={year} />
-            <div id="gallery_image_container">
-              {year_wise_data[year]?.map(
-                ({ title, mainImage, description, date, location }, index) => (
-                  <EventCards
-                    key={index}
-                    title={title}
-                    coverImage={mainImage.asset.url}
-                    description={description[0].children[0].text} // change to block content in sanity
-                    date={changeDateFormat(date)}
-                    location={location}
-                    // buttonText="See pictures ->"
-                    background={"rgba(65, 230, 166, 0.3)"}
-                    // onClick={() => handleViewerClick(index)}
-                  />
-                )
-              )}
+        {sortedYears?.map((year, ind) => {
+          let x = `gallery_image_container_${year}`;
+          return (
+            <div>
+              <Yearheading title={year} />
+              <div id={x}>
+                {year_wise_data[year]?.map(
+                  (
+                    { title, mainImage, description, date, location },
+                    index
+                  ) => (
+                    <EventCards
+                      key={index}
+                      title={title}
+                      coverImage={mainImage.asset.url}
+                      description={description[0].children[0].text} // change to block content in sanity
+                      date={changeDateFormat(date)}
+                      location={location}
+                      clickfunc={() => {
+                        //setYearg(year);
+                        let galleryViewer = new Viewer(
+                          document.getElementById(
+                            `gallery_image_container_${year}`
+                          ),
+                          {
+                            title: [
+                              4,
+                              (coverImage, coverImageData) =>
+                                `${coverImage.alt}`,
+                            ],
+                          }
+                        );
+                      }}
+                      // buttonText="See pictures ->"
+                      background={"rgba(65, 230, 166, 0.3)"}
+                      // onClick={() => handleViewerClick(index)}
+                    />
+                  )
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <Footer />
     </div>
