@@ -96,16 +96,38 @@ const Team = () => {
             return <Head head={domainHead} key={index} />;
           })}
         </div>
-        <div className="text-white font-main font-bold text-[20px] xlg:text-[30px] text-center uppercase flex justify-center mt-12 mb-5">
-          <p className="w-fit border-white border-t-[5px] border-b-[5px]">
-            Deputy Heads
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
-          {data?.deputyHeads?.map((deputyHead, index) => {
-              return <DeputyHead dhead={deputyHead} key={index} />;
-          })}
-        </div>
+        {
+          data?.deputyHeads?.length>0 && (
+            <>
+            <div className="text-white font-main font-bold text-[20px] xlg:text-[30px] text-center uppercase flex justify-center mt-12 mb-5">
+              <p className="w-fit border-white border-t-[5px] border-b-[5px]">
+                Deputy Heads
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
+              {data?.deputyHeads?.map((deputyHead, index) => {
+                  return <DeputyHead dhead={deputyHead} key={index} />;
+              })}
+            </div>
+            </>
+          )
+        }
+        {
+          data?.coreMembers?.length>0 && (
+            <>
+            <div className="text-white font-main font-bold text-[20px] xlg:text-[30px] text-center uppercase flex justify-center mt-12 mb-5">
+                <p className="w-fit border-white border-t-[5px] border-b-[5px]">
+                  Core Members
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
+                {data?.coreMembers?.map((deputyHead, index) => {
+                    return <DeputyHead dhead={deputyHead} key={index} />;
+                })}
+              </div>
+            </>
+          )
+        }
       </div>
       <Footer />
     </>

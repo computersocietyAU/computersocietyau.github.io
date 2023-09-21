@@ -68,11 +68,17 @@ const routes = [
         .filter((team) => team.designation === "Deputy Head")
         .sort((a, b) =>
           a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : 0
-        );;
+        );
+      const coreMembers = data
+      .filter((team) => team.designation === "Core Member")
+      .sort((a, b) =>
+        a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : 0
+      );
       return {
         presidents: presidents,
         domainHeads: domainHeads,
         deputyHeads: deputyHeads,
+        coreMembers: coreMembers
       };
     },
   },
