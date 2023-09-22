@@ -58,21 +58,24 @@ const routes = [
     element: <Team />,
     loader: async () => {
       const data = await fetchTeam();
-      const presidents = data.filter((team) => team.designation === "President");
+      const presidents = data.filter((team) => team.designation === "President")
+      .sort((a, b) =>
+          a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+        );
       const domainHeads = data
         .filter((team) => team.designation === "Domain Head")
         .sort((a, b) =>
-          a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : 0
+          a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : a.name > b.name ? 1 : a.name < b.name ? -1 : 0
         );
       const deputyHeads = data
         .filter((team) => team.designation === "Deputy Head")
         .sort((a, b) =>
-          a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : 0
+          a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : a.name > b.name ? 1 : a.name < b.name ? -1 : 0
         );
       const coreMembers = data
       .filter((team) => team.designation === "Core Member")
       .sort((a, b) =>
-        a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : 0
+        a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : a.name > b.name ? 1 : a.name < b.name ? -1 : 0
       );
       return {
         presidents: presidents,
