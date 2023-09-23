@@ -23,7 +23,7 @@ function EventCards({
       onClick={clickfunc}
     >
       <div className="max-w-72 max-h-max m-auto flex xlg:justify-center xlg:items-center xlg:px-[2rem] p-5">
-        <img src={coverImage} alt="cover" className="w-48 md:w-72" />
+        <img src={coverImage} alt=" " className="w-48 md:w-72" />
       </div>
       <div className="w-[85%] m-auto xlg:m-0 xlg:block flex flex-col justify-center items-center xlg:w-[65%] py-4">
         <div className="font-bold xlg:text-3xl text-xl my-4 text-center uppercase">
