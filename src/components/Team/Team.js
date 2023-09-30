@@ -98,21 +98,7 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
         
           {data?.domainHeads?.map((domainHead, index) => {
-            return (
-              
-                <div 
-                  key={index}
-                  className={ `${
-                      index >= data.domainHeads.length - (data.domainHeads.length % 4)
-                      ? 'centered'
-                      : ''
-                    }`  }
-                >
-                  
-                <Head head={domainHead} key={index}/>
-               
-              </div>
-            );
+            return <Head head={domainHead} key={index}/>;
           })}
           
         </div>
@@ -133,19 +119,9 @@ const Team = () => {
               {data?.deputyHeads?.map((deputyHead, index) => {
 
 
-                  return( <div 
-                    key={index}
-                    className={ `${
-                        index >= data.deputyHeads.length - (data.deputyHeads.length % 4)
-                        ? 'centered'
-                        : ''
-                      }`  }
-                  >
-                  
-                  
+                  return
                   <DeputyHead dhead={deputyHead} key={index}  />
-                  </div>
-                  );
+                  ;
               })}
             </div>
            
@@ -162,20 +138,11 @@ const Team = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8  gap-y-3 gap-x-8">
                 {data?.coreMembers?.map((deputyHead, index) => {
-                    return (<div 
-                      key={index}
-                      className={ `${
-                          index >= data.coreMembers.length - (data.coreMembers.length % 4)
-                          ? 'centered'
-                          : ''
-                        }`  }
-                    >
+                    return 
                     
                     <DeputyHead dhead={deputyHead} key={index}  />
                     
-                    </div>
-                    
-                    );
+                   ;
                 })}
               </div>
             </>
