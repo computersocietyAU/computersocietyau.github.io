@@ -7,6 +7,9 @@ import Head from "./Head";
 import Slider from "react-slick";
 import DeputyHead from "./DeputyHead";
 import President from "./President";
+import { AlignCenterHorizontal } from "phosphor-react";
+
+
 
 const Team = () => {
 
@@ -91,11 +94,31 @@ const Team = () => {
             Heads
           </p>
         </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
+        
           {data?.domainHeads?.map((domainHead, index) => {
-            return <Head head={domainHead} key={index} />;
+            return (
+              
+                <div 
+                  key={index}
+                  className={ `${
+                      index >= data.domainHeads.length - (data.domainHeads.length % 4)
+                      ? 'centered'
+                      : ''
+                    }`  }
+                >
+                  
+                <Head head={domainHead} key={index}/>
+               
+              </div>
+            );
           })}
+          
         </div>
+        
+
+       
         {
           data?.deputyHeads?.length>0 && (
             <>
@@ -104,11 +127,28 @@ const Team = () => {
                 Deputy Heads
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
+           
+  
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8" >
               {data?.deputyHeads?.map((deputyHead, index) => {
-                  return <DeputyHead dhead={deputyHead} key={index} />;
+
+
+                  return( <div 
+                    key={index}
+                    className={ `${
+                        index >= data.deputyHeads.length - (data.deputyHeads.length % 4)
+                        ? 'centered'
+                        : ''
+                      }`  }
+                  >
+                  
+                  
+                  <DeputyHead dhead={deputyHead} key={index}  />
+                  </div>
+                  );
               })}
             </div>
+           
             </>
           )
         }
@@ -120,9 +160,22 @@ const Team = () => {
                   Core Members
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8 gap-y-3 gap-x-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:mx-8  gap-y-3 gap-x-8">
                 {data?.coreMembers?.map((deputyHead, index) => {
-                    return <DeputyHead dhead={deputyHead} key={index} />;
+                    return (<div 
+                      key={index}
+                      className={ `${
+                          index >= data.coreMembers.length - (data.coreMembers.length % 4)
+                          ? 'centered'
+                          : ''
+                        }`  }
+                    >
+                    
+                    <DeputyHead dhead={deputyHead} key={index}  />
+                    
+                    </div>
+                    
+                    );
                 })}
               </div>
             </>
@@ -135,3 +188,5 @@ const Team = () => {
 }
 
 export default Team;
+
+

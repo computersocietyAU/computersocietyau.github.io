@@ -3,9 +3,9 @@ import React from 'react';
 
 const DeputyHead = ({ dhead }) => {
     return (
-        <div className="px-5 my-5 transition ease-in-out hover:scale-110 duration-200">
+        <div className="px-5 my-5  transition ease-in-out hover:scale-110 duration-200">
             <a href={dhead.lnurl} target="_blank" rel="noreferrer">
-                <div className="glassIco mx-auto py-4 px-5 flex flex-col justify-start items-center relative">
+                <div className="glassIco mx-auto py-4 px-5 h-60 flex flex-col justify-start items-center relative">
                     <img src={dhead.image?.asset?.url} alt="head" className="w-[85px] h-[85px] rounded-[50%] object-cover shadow-xl" />
                     <div className="mt-2 mb-5 text-center">
                         <p className="my-1 tracking-[1px] text-[15px]">{dhead.name}</p>
