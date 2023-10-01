@@ -113,8 +113,8 @@ function Events() {
                                 document.getElementById(title),
                                 {
                                   title: [
-                                    4,
-                                    (coverImage, coverImageData) => `${coverImage.alt}`,
+                                    0,
+                                    (coverImage, coverImageData) => ``,
                                   ],
                                 }
                               );
