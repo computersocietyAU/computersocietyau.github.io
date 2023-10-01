@@ -186,6 +186,13 @@ async function fetchEvents() {
           },
           alt
         },
+        eventPics[] {
+          asset -> {
+            _id,
+            url
+          },
+          alt
+        },
         upcoming,
       }`
   );

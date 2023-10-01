@@ -44,7 +44,18 @@ export default {
         name: 'upcoming',
         title: 'Upcoming Event?',
         type: 'boolean',
-      }
+      },
+      {
+        name: 'eventPics',
+        title: 'Event Pictures',
+        type: 'array',
+        of: [{
+            type: 'image',
+            options: {
+                hotspot: true,
+            }
+        }]
+    }
     ],
   
     preview: {

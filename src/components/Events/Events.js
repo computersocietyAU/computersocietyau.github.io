@@ -89,23 +89,22 @@ function Events() {
         {sortedYears?.map((year, ind) => {
           let x = `gallery_image_container_${year}`;
           return (
-            <div>
+            <div key={ind}>
               <Yearheading title={year} />
               <div id={x}>
                 {year_wise_data[year]?.map(
                   (
-                    { title, mainImage, description, date, location },
+                    { title, mainImage, description, date, location, eventPics },
                     index
                   ) => (
                     <EventCards
                       key={index}
-                      title={title}
-                      coverImage={mainImage.asset.url}
-                      description={description[0].children[0].text} // change to block content in sanity
-                      date={changeDateFormat(date)}
-                      location={location}
-                      clickfunc={() => {
-                        //setYearg(year);
+                        title={title}
+                        coverImage={mainImage.asset.url}
+                        description={description[0].children[0].text} // change to block content in sanity
+                        date={changeDateFormat(date)}
+                        location={location}
+                        clickfunc={() => {
                         let galleryViewer = new Viewer(
                           document.getElementById(
                             `gallery_image_container_${year}`
