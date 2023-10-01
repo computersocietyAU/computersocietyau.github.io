@@ -97,31 +97,43 @@ function Events() {
                     { title, mainImage, description, date, location, eventPics },
                     index
                   ) => (
+                   <div id={title} key={index}>
                     <EventCards
-                      key={index}
-                        title={title}
-                        coverImage={mainImage.asset.url}
-                        description={description[0].children[0].text} // change to block content in sanity
-                        date={changeDateFormat(date)}
-                        location={location}
-                        clickfunc={() => {
-                        let galleryViewer = new Viewer(
-                          document.getElementById(
-                            `gallery_image_container_${year}`
-                          ),
-                          {
-                            title: [
-                              4,
-                              (coverImage, coverImageData) =>
-                                `${coverImage.alt}`,
-                            ],
-                          }
-                        );
-                      }}
-                      // buttonText="See pictures ->"
-                      background={"rgba(65, 230, 166, 0.3)"}
-                      // onClick={() => handleViewerClick(index)}
-                    />
+                        key={index}
+                          title={title}
+                          coverImage={mainImage.asset.url}
+                          description={description[0].children[0].text} // change to block content in sanity
+                          date={changeDateFormat(date)}
+                          location={location}
+                          clickfunc={() => {
+                            if (eventPics && eventPics.length > 0) {
+                              const images = eventPics.map((pics) => pics.asset.url);
+                              console.log(title);
+                              let galleryViewer = new Viewer(
+                                document.getElementById(title),
+                                {
+                                  title: [
+                                    4,
+                                    (coverImage, coverImageData) => `${coverImage.alt}`,
+                                  ],
+                                }
+                              );
+                            }
+                        }}
+                        // buttonText="See pictures ->"
+                        background={"rgba(65, 230, 166, 0.3)"}
+                        // onClick={() => handleViewerClick(index)}
+                      />
+                      <div className="hidden">
+                      {
+                        eventPics!=null && eventPics.map((val,index)=> {
+                          return (
+                            <img src={val.asset.url}></img>
+                          )
+                        })
+                      }
+                    </div>
+                   </div>
                   )
                 )}
               </div>
