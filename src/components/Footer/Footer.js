@@ -1,21 +1,77 @@
-import { Link } from '@tanstack/react-location';
-import React,{useState} from 'react';
+import { Link } from "@tanstack/react-location";
+import React, { useState } from "react";
+
+import emailjs from "@emailjs/browser";
 
 const Footer = () => {
+  const [body, setBody] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const email = "cegcsau@gmail.com";
 
-  const [body,setBody] = useState('')
-  const email = "cegcsau@gmail.com"
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  function sendMessage(e){
-    e.preventDefault();
-    if(body.length>0){
-      let mailLink = 'mailto:'+email+'?subject=Message to CSAU'+'&body='+body
-      window.location.href = mailLink
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setErrorMsg("");
+    setIsSuccess(false);
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+    if (userEmail.trim() === "") {
+      setIsSubmitting(false);
+      setErrorMsg("Please enter your email");
+      setTimeout(() => {
+        setErrorMsg("");
+      }, 2000);
+      return;
     }
-    else{
-      alert("Please enter a message")
+    if (body.trim() === "") {
+      setIsSubmitting(false);
+      setErrorMsg("Please enter a message");
+      setTimeout(() => {
+        setErrorMsg("");
+      }, 2000);
+      return;
     }
-  }
+
+    const templateParams = {
+      to_email: email,
+      from_name: userEmail,
+      message: body,
+    };
+
+    try {
+      const response = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+
+      if (response.status === 200) {
+        setBody("");
+        setIsSuccess(true);
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 2000);
+      } else {
+        setErrorMsg("Error sending the message. Please try again.");
+        setIsSuccess(false);
+        setTimeout(() => {
+          setErrorMsg("");
+        }, 2000);
+      }
+    } catch (error) {
+      setErrorMsg("An error occurred. Please try again later.");
+      setIsSuccess(false);
+      setTimeout(() => {
+        setErrorMsg("");
+      }, 2000);
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <section
       className="w-[100vw] pt-10 pb-3 flex justify-center items-center flex-col"
@@ -32,29 +88,44 @@ const Footer = () => {
             id="contact-form"
             className="flex flex-col align-center justify-around my-[20px] xlg:my-0"
           >
-            {/* <input
+            <input
               type="text"
-              placeholder="Email Address"
+              placeholder="Your Email"
               autoComplete="off"
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)}
               required
               className="bg-navbarBg py-4 px-2.5 h-9 w-[300px] font-linksText text-inputColor text-sm outline-none border-none rounded-md"
-            /> */}
+            />
             <textarea
               placeholder="Get in touch with us"
               cols="20"
               rows="5"
               autoComplete="off"
               value={body}
-              onChange={(e)=>setBody(e.target.value)}
+              onChange={(e) => setBody(e.target.value)}
               required
               className="bg-navbarBg w-[300px] my-5 font-linksText text-inputColor text-sm outline-none border-none rounded-md p-[10px] resize-none"
             ></textarea>
             <button
-              onClick={(e)=>sendMessage(e)}
-              className="bg-navSpecial w-[300px] font-linksText text-black text-sm outline-none rounded-md p-[10px] tracking-[1px] cursor-pointer border-[1px] border-inputBorder border-solid"
+              onClick={(e) => onSubmit(e)}
+              className={`bg-navSpecial w-[300px] font-linksText text-black text-sm outline-none rounded-md p-[10px] tracking-[1px] cursor-pointer border-[1px] border-inputBorder border-solid ${
+                isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              disabled={isSubmitting}
             >
-              SEND MESSAGE
+              {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
             </button>
+            {errorMsg && (
+              <div className="border px-4 py-2 rounded mt-2 text-center">
+                <p className="text-sm">{errorMsg}</p>
+              </div>
+            )}
+            {isSuccess && (
+              <div className="border px-4 py-2 rounded mt-2 text-center">
+                <p className="text-sm">Message sent successfully!</p>
+              </div>
+            )}
           </form>
           <ul className="list-none text-navSpecial">
             <li>
