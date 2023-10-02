@@ -49,6 +49,7 @@ const Footer = () => {
       );
 
       if (response.status === 200) {
+        setUserEmail("");
         setBody("");
         setIsSuccess(true);
         setTimeout(() => {
