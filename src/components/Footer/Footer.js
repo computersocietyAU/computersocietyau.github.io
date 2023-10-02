@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 const Footer = () => {
   const [body, setBody] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const email = "cegcsau@gmail.com";
+  const email = process.env.VITE_EMAILID;
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -17,7 +17,7 @@ const Footer = () => {
     setIsSubmitting(true);
     setErrorMsg("");
     setIsSuccess(false);
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+    emailjs.init(process.env.VITE_EMAILJS_PUBLIC_KEY);
     if (userEmail.trim() === "") {
       setIsSubmitting(false);
       setErrorMsg("Please enter your email");
@@ -43,8 +43,8 @@ const Footer = () => {
 
     try {
       const response = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        process.env.VITE_EMAILJS_SERVICE_ID,
+        process.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
@@ -110,9 +110,8 @@ const Footer = () => {
             ></textarea>
             <button
               onClick={(e) => onSubmit(e)}
-              className={`bg-navSpecial w-[300px] font-linksText text-black text-sm outline-none rounded-md p-[10px] tracking-[1px] cursor-pointer border-[1px] border-inputBorder border-solid ${
-                isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-              }`}
+              className={`bg-navSpecial w-[300px] font-linksText text-black text-sm outline-none rounded-md p-[10px] tracking-[1px] cursor-pointer border-[1px] border-inputBorder border-solid ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               disabled={isSubmitting}
             >
               {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
