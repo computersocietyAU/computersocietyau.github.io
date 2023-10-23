@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSpring, animated } from "react-spring";
 import CalenderIcon from "../Icons/CalenderIcon";
 import PlaceIcon from "../Icons/PlaceIcon";
+
+import "./event-card.css";
 
 function EventCards({
   coverImage,
@@ -15,12 +18,25 @@ function EventCards({
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
+  const [isHovered, setIsHovered] = useState(false);
+
+  const borderStyles = useSpring({
+    borderColor: isHovered ? "rgba(255, 255, 255, 0.5)" : "transparent",
+  });
+
+  const cardStyles = useSpring({
+    transform: isHovered ? "scale(1.05)" : "scale(1)",
+  });
 
   return (
-    <div
-      className="w-screen xlg:w-[90vw] min-h-max py-[2rem] xlg:py-0 pb-[4rem]  mx-auto mt-[2rem] mb-[3rem] flex-col xlg:flex-row items-center xlg:items-start justify-evenly xlg:justify-start rounded-2xl flex relative transition ease-in-out hover:cursor-pointer hover:opacity-90 hover:scale-95 duration-200"
-      style={{ background: background }}
-      onClick={clickfunc}
+    <animated.div
+      className={`border-2 border-transparent w-screen xlg:w-[90vw] min-h-max py-[2rem] xlg:py-0 pb-[4rem] mx-auto mt-[2rem] mb-[3rem] flex-col xlg:flex-row items-center xlg:items-start justify-evenly xlg:justify-start rounded-2xl flex relative event-card ${
+        isHovered ? "pulsate-border" : ""
+      }`}
+      style={{ ...borderStyles, background, ...cardStyles }}
+      onClickCapture={clickfunc}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="max-w-72 max-h-max m-auto flex xlg:justify-center xlg:items-center xlg:px-[2rem] p-5">
         <img src={coverImage} alt=" " className="w-48 md:w-72" />
@@ -48,7 +64,7 @@ function EventCards({
           </button>
         ) : null}
       </div>
-    </div>
+    </animated.div>
   );
 }
 
