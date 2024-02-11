@@ -64,56 +64,28 @@ body {
   border-radius: 10px;
 }
 
-#img-head{
-  background: url('/public/blogBg.jpeg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
-#Blog .latest-blogs, .president-card, .domain {
+#Blog .latest-blogs,
+.president-card,
+.domain {
   background: url("/public/section-img.png");
 }
 
-.president-card:hover > div {
+.president-card:hover>div {
   background: #182241bb;
 }
 
 .cardActive:hover {
-  -webkit-box-shadow:inset 0px 0px 0px 2px rgb(226, 226, 226);
-  -moz-box-shadow:inset 0px 0px 0px 2px rgb(226, 226, 226);
-  box-shadow:inset 0px 0px 0px 2px rgb(226, 226, 226);
+  -webkit-box-shadow: inset 0px 0px 0px 2px rgb(226, 226, 226);
+  -moz-box-shadow: inset 0px 0px 0px 2px rgb(226, 226, 226);
+  box-shadow: inset 0px 0px 0px 2px rgb(226, 226, 226);
 }
-
-
 
 .centered {
-  
-  grid-column: span 2; 
-  max-width: 320px; 
+
+  grid-column: span 2;
+  max-width: 320px;
   justify-self: center;
   width: calc(350px);
-  }
-
-
-
-
-
-.blog-right-container {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;
-}
-
-.blog-right-container::-webkit-scrollbar { 
-  display: none; 
-}
-
-.blog-left-img {
-  background-image: url("https://futurumresearch.com/wp-content/uploads/2020/03/Zoho-Corporation-office.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .glassIco {
@@ -126,9 +98,11 @@ body {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   overflow: hidden;
-  
+
 }
-.glassIco, .glassIco * {
+
+.glassIco,
+.glassIco * {
   transition: 200ms;
 }
 
@@ -141,12 +115,18 @@ body {
   max-height: 500px !important;
 }
 
-@media only screen and (max-width: 1280px) {
+.img {
+  width: 110px;
+  height: 110px;
+}
 
-  .blog-right-container {
-      margin: 0 auto 3em;
-  }
-  
+.img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 22px #3336;
+  transition: 0.6s;
+  object-fit: contain;
 }
 
 @supports (scrollbar-color: red blue) {

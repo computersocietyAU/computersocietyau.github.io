@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     colors: {
       navbarBg: '#39377c',
-      navSpecial: '#41E6A6' ,
+      navSpecial: '#41E6A6',
       white: '#FFFFFF',
       formInput: '#28857acc',
       inputColor: '#D9D9D9',
@@ -17,7 +17,6 @@ module.exports = {
       footerRule: '#D9D9D9',
       footerBorder: '#9f9be880',
       blogCardBg: '#11203899',
-      ourBlogBg: '#41e6a61a',
       black: '#000000',
       blogText: '#47515E',
       cardBg: '#19244499',
@@ -53,8 +52,8 @@ module.exports = {
         '1280': '1364px',
         '768': '768px',
       },
-      height:{
-        'he':'1440px',
+      height: {
+        'he': '1440px',
       },
       fontSize: {
         'tiny': '.50rem',
@@ -66,9 +65,9 @@ module.exports = {
         '2k': '2000px',
         '1k': '1440px',
         'tab': '768px',
-        'k':'1024px',
-        'mob':'425px',
-        'mob-sm':'320px',
+        'k': '1024px',
+        'mob': '425px',
+        'mob-sm': '320px',
       },
     },
   },

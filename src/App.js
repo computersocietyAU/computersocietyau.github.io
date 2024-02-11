@@ -1,9 +1,7 @@
 import React from 'react';
-import {  Navbar, Events, Home } from './components';
-import Team  from './components/Team/Team';
+import { Navbar, Events, Home } from './components';
+import Team from './components/Team/Team';
 import { Router, Outlet, ReactLocation } from '@tanstack/react-location';
-// import Blog from './components/Blog/Blog';
-// import ExploreBlog from './components/Blog/ExploreBlog';
 import MediumBlog from './components/Blog/MediumBlog';
 import client from './client';
 import axios from 'axios';
@@ -30,15 +28,6 @@ const routes = [
       };
     },
   },
-  // {
-  //   path: "/blog/:blogId",
-  //   element: <ExploreBlog />,
-  //   loader: async ({ params: { blogId } }) => {
-  //     return {
-  //       blog: await fetchBlogById(blogId),
-  //     };
-  //   },
-  // },
   {
     path: "/blogs",
     // element:(
@@ -59,7 +48,7 @@ const routes = [
     loader: async () => {
       const data = await fetchTeam();
       const presidents = data.filter((team) => team.designation === "President")
-      .sort((a, b) =>
+        .sort((a, b) =>
           a.name > b.name ? 1 : a.name < b.name ? -1 : 0
         );
       const domainHeads = data
@@ -73,10 +62,10 @@ const routes = [
           a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : a.name > b.name ? 1 : a.name < b.name ? -1 : 0
         );
       const coreMembers = data
-      .filter((team) => team.designation === "Core Member")
-      .sort((a, b) =>
-        a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : a.name > b.name ? 1 : a.name < b.name ? -1 : 0
-      );
+        .filter((team) => team.designation === "Core Member")
+        .sort((a, b) =>
+          a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : a.name > b.name ? 1 : a.name < b.name ? -1 : 0
+        );
       return {
         presidents: presidents,
         domainHeads: domainHeads,
@@ -133,14 +122,7 @@ async function fetchTeam() {
     designation,
     year,
     domain,
-    department,
-    image {
-      asset -> {
-        _id,
-        url
-      },
-      alt
-    }
+    department
   }`
   );
   return data;
@@ -165,8 +147,8 @@ async function fetchTeam() {
 //   );
 //   return data[0];
 // }
-async function getMediumBlogData(){
-  const resp = await axios.get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cegcsau",{method: 'GET'})
+async function getMediumBlogData() {
+  const resp = await axios.get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cegcsau", { method: 'GET' })
   const blogs = (resp.data.items)
   return blogs
 }
