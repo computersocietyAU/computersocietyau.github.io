@@ -30,16 +30,15 @@ function EventCards({
 
   return (
     <animated.div
-      className={`border-2 border-transparent w-screen xlg:w-[90vw] min-h-max py-[2rem] xlg:py-0 pb-[4rem] mx-auto mt-[2rem] mb-[3rem] flex-col xlg:flex-row items-center xlg:items-start justify-evenly xlg:justify-start rounded-2xl flex relative event-card ${
-        isHovered ? "pulsate-border" : ""
-      }`}
+      className={`border-2 border-transparent w-screen xlg:w-[90vw] min-h-max py-[2rem] xlg:py-0 pb-[4rem] mx-auto mt-[2rem] mb-[3rem] flex-col xlg:flex-row items-center xlg:items-start justify-evenly xlg:justify-start rounded-2xl flex relative event-card ${isHovered ? "pulsate-border" : ""
+        }`}
       style={{ ...borderStyles, background, ...cardStyles }}
       onClickCapture={clickfunc}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="max-w-72 max-h-max m-auto flex xlg:justify-center xlg:items-center xlg:px-[2rem] p-5 cursor-pointer">
-        <img src={coverImage} alt=" " className="w-48 md:w-72" />
+        <img src={coverImage} alt=" " className="w-48 md:w-72" title={`${title === "Source code" ? "password: muthuraman" : ""}`} />
       </div>
       <div className="w-[85%] m-auto xlg:m-0 xlg:block flex flex-col justify-center items-center xlg:w-[65%] py-4">
         <div className="font-bold xlg:text-3xl text-xl my-4 text-center uppercase">

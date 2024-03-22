@@ -35,41 +35,47 @@ const Footer = () => {
       return;
     }
 
-    const templateParams = {
-      to_email: email,
-      from_name: userEmail,
-      message: body,
-    };
-
-    try {
-      const response = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        templateParams
-      );
-      console.log(response)
-
-      if (response.status === 200) {
-        setUserEmail("");
-        setBody("");
-        setIsSuccess(true);
-        setTimeout(() => {
-          setIsSuccess(false);
-        }, 2000);
-      } else {
-        setErrorMsg("Error sending the message. Please try again.");
-        setIsSuccess(false);
-        setTimeout(() => {
-          setErrorMsg("");
-        }, 2000);
-      }
-    } catch (error) {
-      setErrorMsg("An error occurred. Please try again later.");
-      setIsSuccess(false);
-      setTimeout(() => {
-        setErrorMsg("");
-      }, 2000);
+    if (userEmail == "mysteryseeker@example.com" && body == "Dear Web Wizards, I've stumbled upon your digital wonderland and am intrigued by its secrets. Care to share another? Yours curiously, Andy.") {
+      alert("Wohoo. Password to the next question doc: alancooper");
+      setIsSubmitting(false);
+      return
     }
+    setIsSuccess(true);
+    // const templateParams = {
+    //   to_email: email,
+    //   from_name: userEmail,
+    //   message: body,
+    // };
+
+    // try {
+    //   const response = await emailjs.send(
+    //     process.env.REACT_APP_EMAILJS_SERVICE_ID,
+    //     process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    //     templateParams
+    //   );
+    //   console.log(response)
+
+    //   if (response.status === 200) {
+    //     setUserEmail("");
+    //     setBody("");
+    //     setIsSuccess(true);
+    //     setTimeout(() => {
+    //       setIsSuccess(false);
+    //     }, 2000);
+    //   } else {
+    //     setErrorMsg("Error sending the message. Please try again.");
+    //     setIsSuccess(false);
+    //     setTimeout(() => {
+    //       setErrorMsg("");
+    //     }, 2000);
+    //   }
+    // } catch (error) {
+    //   setErrorMsg("An error occurred. Please try again later.");
+    //   setIsSuccess(false);
+    //   setTimeout(() => {
+    //     setErrorMsg("");
+    //   }, 2000);
+    // }
 
     setIsSubmitting(false);
   };
