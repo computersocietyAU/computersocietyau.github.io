@@ -5,14 +5,14 @@ const handleClick = () => {
 
 }
 
-const MediumBlogCard = ({ imageURL, title, body, link }) => (
+const MediumBlogCard = ({ imageURL, title, body, link, desc }) => (
 
   <div className="flex justify-center transition ease-in-out hover:scale-105 duration-200">
     <div
       className="glassIco block rounded-lg shadow-lg max-h-[300px]" onClick={handleClick}>
       <img
         className="rounded-t-lg object-cover h-3/5 w-full"
-        src={imageURL}
+        src={desc.toString().match(/<img[^>]+src="([^">]+)"/)[1]}
         alt={title} />
       <div className="p-4">
         <h5
@@ -71,7 +71,7 @@ function MediumBlog() {
         {
           data.blogs.map(blog => (
             <a href={blog.link} target="_blank" rel="noreferrer noopener">
-              <MediumBlogCard imageURL={blog.thumbnail} title={blog.title} link={blog.link} body={blog.content} />
+              <MediumBlogCard imageURL={blog.thumbnail} title={blog.title} link={blog.link} body={blog.content} desc={blog.description} />
             </a>
           ))}
       </div>
