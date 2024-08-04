@@ -91,6 +91,16 @@ const Team = () => {
         </div>
         <div className="text-white font-main font-bold text-[20px] mb-5 xlg:text-[30px] text-center uppercase flex justify-center">
           <p className="w-fit border-white border-t-[5px] border-b-[5px]">
+            General Secretary
+          </p>
+        </div>
+        <div className="flex justify-center items-center gap-4 gap-x-10 my-7 mb-14 flex-wrap">
+          {data?.gensec?.map((president, index) => {
+            return <President president={president} key={index} />;
+          })}
+        </div>
+        <div className="text-white font-main font-bold text-[20px] mb-5 xlg:text-[30px] text-center uppercase flex justify-center">
+          <p className="w-fit border-white border-t-[5px] border-b-[5px]">
             Heads
           </p>
         </div>

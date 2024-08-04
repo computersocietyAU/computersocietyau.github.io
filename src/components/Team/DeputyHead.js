@@ -8,7 +8,7 @@ const DeputyHead = ({ dhead }) => {
                 <div className="glassIco mx-auto py-4 px-5 h-60 flex flex-col justify-start items-center relative">
                     <div className='img'>
                         <img
-                            src={`/team/${dhead.name}.jpg`}
+                            src={`/team_2024-25/${dhead.name}.jpg`}
                             alt="head" />
                     </div>
                     <div className="mt-2 mb-5 text-center">

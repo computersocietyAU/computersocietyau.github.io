@@ -7,7 +7,7 @@ const Head = ({ head }) => {
       <div className="glassIco min-h-[300px] pt-8 flex flex-col justify-start items-center relative">
         <div className='img'>
           <img
-            src={`/team/${head.name}.jpg`}
+            src={`/team_2024-25/${head.name}.jpg`}
             alt="head" />
         </div>
         <div className="mt-2 text-center">

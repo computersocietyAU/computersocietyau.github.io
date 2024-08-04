@@ -7,7 +7,7 @@ export default function President({ president }) {
       <div className="bg-cardBg flex justify-center items-center flex-wrap gap-x-6 gay-y-3 py-4 px-8 rounded-lg">
         <div className='img'>
           <img
-            src={`/team/${president.name}.jpg`}
+            src={`/team_2024-25/${president.name}.jpg`}
             alt="head" />
         </div>
         <div className="text-center">

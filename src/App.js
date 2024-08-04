@@ -52,10 +52,11 @@ const routes = [
           a.name > b.name ? 1 : a.name < b.name ? -1 : 0
         );
       const domainHeads = data
-        .filter((team) => team.designation === "Domain Head")
+        .filter((team) => team.designation === "Head")
         .sort((a, b) =>
           a.domain > b.domain ? 1 : b.domain > a.domain ? -1 : a.name > b.name ? 1 : a.name < b.name ? -1 : 0
         );
+      const gensec = data.filter((team) => team.designation === "General Secretary");
       const deputyHeads = data
         .filter((team) => team.designation === "Deputy Head")
         .sort((a, b) =>
@@ -70,7 +71,8 @@ const routes = [
         presidents: presidents,
         domainHeads: domainHeads,
         deputyHeads: deputyHeads,
-        coreMembers: coreMembers
+        coreMembers: coreMembers,
+        gensec: gensec,
       };
     },
   },
